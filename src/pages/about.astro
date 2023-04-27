@@ -1,0 +1,47 @@
+---
+import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="MarcialFPS - About">
+  <main>
+    <img class="polygon-background" src="icons/polygons-back.svg" />
+    <div class="content">
+      <img class="about-photo" src="/images/aboutPhoto.jpg" />
+      <Card>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+        ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh
+        eu consequat rhoncus. Ut ornare mi nec felis tincidunt hendrerit.
+        Pellentesque vitae condimentum urna, nec interdum quam. Curabitur
+        eleifend orci vitae risus cursus sagittis. Sed et nisi nisl. Quisque
+        aliquam augue id hendrerit consequat. Cras a blandit felis. Nullam
+        luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
+        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
+      </Card>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .polygon-background {
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+    margin: 2rem;
+  }
+
+  .content {
+    height: auto;
+    display: flex;
+
+    gap: 2rem;
+  }
+
+  .about-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: calc(100% / 5);
+  }
+</style>
