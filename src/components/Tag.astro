@@ -1,0 +1,32 @@
+---
+export interface Props {
+  isCategory?: boolean;
+  content: string;
+}
+
+const { isCategory, content } = Astro.props;
+---
+
+<div class={isCategory ? "category-tag" : "date-tag"}>
+  {isCategory && "#"}{content}
+</div>
+<style>
+  div {
+    border: 3px solid;
+    border-radius: 34px;
+    font-family: "Arimo";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    width: fit-content;
+    padding: 0.5rem;
+  }
+
+  .category-tag {
+    border-color: #c6ae59;
+    background: rgba(198, 174, 89, 0.1);
+  }
+
+  .date-tag {
+  }
+</style>

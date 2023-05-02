@@ -1,0 +1,82 @@
+---
+import Card from "../components/Card.astro";
+import Heading from "../components/Heading.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="MarcialFPS - About">
+  <main>
+    <img class="polygon-background" src="icons/polygons-back.svg" />
+    <Heading level={1} upperCase title="My projects" />
+    <div class="content">
+      <Card width="25%">
+        <Heading level={2} title="Lorem ipsum dolor" />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
+        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
+        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
+        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
+        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
+        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
+        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
+      </Card>
+      <Card width="25%">
+        <Heading level={2} title="Lorem ipsum dolor" />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
+        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
+        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
+        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
+        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
+        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
+        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
+      </Card>
+      <Card width="25%">
+        <Heading level={2} title="Lorem ipsum dolor" />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
+        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
+        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
+        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
+        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
+        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
+        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
+      </Card>
+      <Card width="25%">
+        <Heading level={2} title="Lorem ipsum dolor" />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
+        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
+        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
+        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
+        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
+        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
+        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
+      </Card>
+      <Card width="25%">
+        <Heading level={2} title="Lorem ipsum dolor" />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
+        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
+        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
+        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
+        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
+        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
+        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
+      </Card>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .polygon-background {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    height: 85%;
+  }
+
+  .content {
+    height: auto;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+</style>

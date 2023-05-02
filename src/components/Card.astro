@@ -1,4 +1,12 @@
-<div class="card">
+---
+export interface Props {
+  width?: string;
+}
+
+const { width } = Astro.props;
+---
+
+<div class="card" style={{ width: width }}>
   <slot />
 </div>
 <style>
@@ -8,6 +16,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
+    color: #ffffff;
     padding: 2rem;
   }
 </style>
