@@ -1,6 +1,7 @@
 ---
 import Card from "../../components/Card.astro";
 import Heading from "../../components/Heading.astro";
+import Tag from "../../components/Tag.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -12,6 +13,10 @@ import Layout from "../../layouts/Layout.astro";
       upperCase
       title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
     />
+    <div class="tags-container">
+      <Tag isCategory content="Astronomy" />
+      <Tag content="02/05/2023" />
+    </div>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis non
       tellus in vestibulum. In venenatis leo massa, sit amet commodo libero
@@ -26,6 +31,7 @@ import Layout from "../../layouts/Layout.astro";
       est turpis nec tortor. Cras at egestas sem, a luctus elit. Nam luctus
       faucibus nunc et elementum.
     </p>
+    <img class="post-img" src="/images/aboutPhoto.jpg" />
     <p>
       Ut vitae scelerisque lorem. Ut erat libero, pulvinar a tincidunt et,
       efficitur vel felis. Cras ultrices quam lacus, sagittis rhoncus leo
@@ -77,11 +83,22 @@ import Layout from "../../layouts/Layout.astro";
     height: 85%;
   }
 
+  .tags-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .post-img {
+    width: 100%;
+    height: auto;
+  }
+
   p {
     font-family: "Arimo";
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 1rem;
     color: #ffffff;
   }
