@@ -1,3 +1,7 @@
+---
+import NavBar from "./NavBar.astro";
+---
+
 <header>
   <a href="/">
     <svg
@@ -12,10 +16,26 @@
         fill="currentColor"></path>
     </svg>
   </a>
+  <NavBar />
 </header>
 <style>
   header {
-    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem 0.5rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .nav-container {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      position: fixed;
+      top: calc(100% / 3);
+      right: 0;
+      text-align: end;
+    }
   }
 
   a {

@@ -35,9 +35,9 @@
   footer {
     padding: 1rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
   }
 
   p {
@@ -46,6 +46,7 @@
     font-weight: 400;
     font-size: 0.75rem;
     color: #ffffff;
+    margin: 0;
   }
 
   svg {
@@ -55,5 +56,12 @@
 
   a:is(:hover, :focus-within) {
     color: #c6ae59;
+  }
+
+  @media only screen and (min-width: 768px) {
+    footer {
+      flex-direction: row;
+      gap: 0.5rem;
+    }
   }
 </style>

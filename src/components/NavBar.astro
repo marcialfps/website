@@ -7,12 +7,23 @@
   .nav-container {
     list-style: none;
     display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    position: fixed;
-    top: calc(100% / 3);
-    right: 0;
-    text-align: end;
+    gap: 1rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .nav-container {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      position: fixed;
+      top: calc(100% / 3);
+      right: 0;
+      text-align: end;
+    }
+
+    li {
+      margin-bottom: 5rem;
+    }
   }
 
   li {
@@ -21,7 +32,6 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 23px;
-    margin-bottom: 5rem;
   }
 
   a {
