@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: npm install
+        run: npm install --omit=dev
       - name: Build
         run: npm run build
       - name: Set AWS credentials
@@ -24,5 +24,5 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Deploy to S3
         run: |
-          aws s3 rm s3://beta.marcialfps.es --recursive
-          aws s3 cp ./dist/ s3://beta.marcialfps.es/ --recursive
+          aws s3 rm s3://marcialfps.es --recursive
+          aws s3 cp ./dist/ s3://marcialfps.es/ --recursive
