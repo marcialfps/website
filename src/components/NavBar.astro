@@ -7,7 +7,28 @@
   .nav-container {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    font-family: "Aldrich";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 23px;
+  }
+
+  a {
+    text-decoration: inherit;
+    color: #ffffff;
+  }
+
+  a:is(:hover, :focus-within) {
+    color: #c6ae59;
   }
 
   @media only screen and (min-width: 768px) {
@@ -23,23 +44,7 @@
 
     li {
       margin-bottom: 5rem;
+      font-size: 1.5rem;
     }
-  }
-
-  li {
-    font-family: "Aldrich";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 23px;
-  }
-
-  a {
-    text-decoration: inherit;
-    color: #ffffff;
-  }
-
-  a:is(:hover, :focus-within) {
-    color: #c6ae59;
   }
 </style>

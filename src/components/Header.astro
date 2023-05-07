@@ -21,12 +21,32 @@ import NavBar from "./NavBar.astro";
 <style>
   header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem 0.5rem;
+    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+    background-color: #1e1e1e;
+  }
+
+  a {
+    text-decoration: inherit;
+    color: #ffffff;
+    height: 2rem;
+  }
+
+  a svg {
+    height: 2rem;
+    width: auto;
+  }
+
+  a:is(:hover, :focus-within) {
+    color: #c6ae59;
   }
 
   @media only screen and (min-width: 768px) {
+    header {
+      background-color: inherit;
+    }
+
     .nav-container {
       display: flex;
       flex-direction: column;
@@ -36,19 +56,9 @@ import NavBar from "./NavBar.astro";
       right: 0;
       text-align: end;
     }
-  }
 
-  a {
-    text-decoration: inherit;
-    color: #ffffff;
-  }
-
-  a svg {
-    height: 4rem;
-    width: auto;
-  }
-
-  a:is(:hover, :focus-within) {
-    color: #c6ae59;
+    a {
+      display: none;
+    }
   }
 </style>
