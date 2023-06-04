@@ -1,26 +1,61 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Heading from "../components/Heading.astro";
+import Hexagon from "../components/Hexagon.astro";
+import Message from "../components/Message.astro";
 ---
 
 <MainLayout title="marcialfps - Home">
   <main>
-    <div class="logo-container">
-      <img src="icons/logo-yellow.svg" />
-      <img src="icons/logo-letters.svg" />
+    <div class="hexagons">
+      <Hexagon />
+      <div class="hexagon-group one">
+        <Hexagon />
+        <Hexagon />
+        <Hexagon />
+      </div>
+      <div class="hexagon-group two">
+        <Hexagon />
+        <Hexagon />
+        <Hexagon />
+      </div>
+      <div class="logo">
+        <svg
+          viewBox="0 0 147 162"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.96729 42.9312L3.82991 37.2385L0.467285 42.9312H6.96729ZM140.033 42.9312H146.533L143.17 37.2384L140.033 42.9312ZM140.033 118.486L143.242 124.138L146.533 118.486H140.033ZM73.5 156.263L70.2906 161.916H76.7095L73.5 156.263ZM6.96729 118.486H0.467285L3.75785 124.138L6.96729 118.486ZM73.5 6.26343L76.6374 0.570726H70.3626L73.5 6.26343ZM73.5 78.5647L70.4312 84.2946L73.5 85.9382L76.5689 84.2946L73.5 78.5647ZM133.533 42.9312V118.486H146.533V42.9312H133.533ZM136.823 112.834L70.2906 150.611L76.7095 161.916L143.242 124.138L136.823 112.834ZM76.7095 150.611L10.1767 112.834L3.75785 124.138L70.2906 161.916L76.7095 150.611ZM13.4673 118.486V42.9312H0.467285V118.486H13.4673ZM10.1047 48.6239L76.6374 11.9561L70.3626 0.570726L3.82991 37.2385L10.1047 48.6239ZM70.3626 11.9561L136.895 48.6239L143.17 37.2384L76.6374 0.570726L70.3626 11.9561ZM3.89845 48.6611L70.4312 84.2946L76.5689 72.8347L10.0361 37.2012L3.89845 48.6611ZM76.5689 84.2946L143.102 48.6611L136.964 37.2012L70.4312 72.8347L76.5689 84.2946Z"
+            fill="#C6AE59"></path>
+        </svg>
+      </div>
+      <div class="hexagon-group three">
+        <Hexagon />
+        <Hexagon />
+        <Hexagon />
+      </div>
+      <div class="hexagon-group four">
+        <Hexagon />
+        <Hexagon />
+        <Hexagon />
+      </div>
     </div>
-    <div class="main-images-container">
-      <img class="polygon-background" src="icons/polygons.svg" />
 
-      <img class="main-photo" src="/images/mainPhoto.png" />
-    </div>
-
-    <div class="info-container">
-      <Heading level={3} title="Marcial F Parrilla Socas" />
-      <Heading level={4} title="Computer engineer" />
-    </div>
-
-    <div class="social-media-container">
+    <Message><p>Hi there 🙋‍♂️ I'm Marcial</p></Message>
+    <Message><p>I'm a computer engineer 💻 and this is my website</p></Message>
+    <Message>
+      <p>
+        Here you can find more info <a href="/about">About me</a>, <a
+          href="/projects">my Projects</a
+        >, or just things that I share in <a href="/blog">my Blog</a>
+      </p>
+    </Message>
+    <Message>
+      <p>
+        If you need more info about me, you can follow me on my social networks
+      </p>
+    </Message>
+    <Message>
       <a
         class="social-media"
         target="_blank"
@@ -77,63 +112,42 @@ import Heading from "../components/Heading.astro";
           ></path></svg
         ></a
       >
-    </div>
+    </Message>
   </main>
 </MainLayout>
 
 <style>
-  .logo-container {
+  .hexagons {
+    align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: sticky;
-    top: 0;
-    gap: 1.5rem;
-    z-index: 1;
-    margin: 1rem;
+    gap: 0.15rem;
   }
 
-  .main-images-container {
+  .hexagon-group {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 0.15rem;
   }
 
-  .polygon-background {
-    position: fixed;
+  .logo svg {
+    width: 25vw;
     height: auto;
-    width: 40%;
+    margin: 0.5rem 0;
   }
 
-  .main-photo {
-    height: auto;
-    width: 75%;
-    position: fixed;
-    bottom: 0;
-    z-index: 1;
+  p {
+    margin: 0;
   }
 
-  /* .info-container {
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    bottom: 0;
-    height: auto;
-  } */
-
-  .info-container {
-    display: none;
+  p a {
+    color: inherit;
+    font-weight: 400;
   }
 
-  .social-media-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    padding: 2rem;
-    color: #ffffff;
+  .social-media {
+    height: 2rem;
+    width: auto;
   }
 
   .social-media svg {
@@ -144,34 +158,6 @@ import Heading from "../components/Heading.astro";
   }
 
   .social-media svg:is(:hover, :focus-within) {
-    color: #c6ae59;
-  }
-
-  @media only screen and (min-width: 768px) {
-    .logo-container {
-      margin-top: -3rem;
-    }
-
-    .main-photo {
-      width: calc(100% / 3);
-    }
-
-    .polygon-background {
-      height: auto;
-      width: auto;
-    }
-
-    .info-container {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      padding: 2rem;
-    }
-
-    .social-media-container {
-      flex-direction: row;
-    }
+    color: #0f0f0f;
   }
 </style>

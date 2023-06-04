@@ -7,7 +7,10 @@
   .nav-container {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    justify-content: center;
+    gap: 3rem;
+    padding: 0 1rem;
+    background: #313131;
   }
 
   ul {
@@ -15,11 +18,11 @@
   }
 
   li {
-    font-family: "Aldrich";
+    font-family: "Oswald";
     font-style: normal;
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 23px;
+    font-size: 1.25rem;
+    line-height: 36px;
   }
 
   a {
@@ -29,22 +32,5 @@
 
   a:is(:hover, :focus-within) {
     color: #c6ae59;
-  }
-
-  @media only screen and (min-width: 768px) {
-    .nav-container {
-      display: flex;
-      flex-direction: column;
-      padding: 2rem;
-      position: fixed;
-      top: calc(100% / 3);
-      right: 0;
-      text-align: end;
-    }
-
-    li {
-      margin-bottom: 5rem;
-      font-size: 1.5rem;
-    }
   }
 </style>

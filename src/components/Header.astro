@@ -3,38 +3,62 @@ import NavBar from "./NavBar.astro";
 ---
 
 <header>
-  <a href="/">
-    <svg
-      width="149"
-      height="164"
-      viewBox="0 0 149 164"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M8 43.6677L4.37995 37.0992L0.5 43.6677H8ZM141.065 43.6677H148.565L144.686 37.0992L141.065 43.6677ZM141.065 119.223L144.769 125.745L148.565 119.223H141.065ZM74.5327 157L70.8295 163.522H78.2359L74.5327 157ZM8 119.223H0.5L4.2968 125.745L8 119.223ZM74.5327 7L78.1528 0.431498H70.9127L74.5327 7ZM74.5327 79.3012L70.9918 85.9127L74.5327 87.8092L78.0737 85.9127L74.5327 79.3012ZM133.565 43.6677V119.223H148.565V43.6677H133.565ZM137.362 112.701L70.8295 150.478L78.2359 163.522L144.769 125.745L137.362 112.701ZM78.2359 150.478L11.7032 112.701L4.2968 125.745L70.8295 163.522L78.2359 150.478ZM15.5 119.223V43.6677H0.5V119.223H15.5ZM11.6201 50.2362L78.1528 13.5685L70.9127 0.431498L4.37995 37.0992L11.6201 50.2362ZM70.9127 13.5685L137.445 50.2362L144.686 37.0992L78.1528 0.431498L70.9127 13.5685ZM4.45904 50.2792L70.9918 85.9127L78.0737 72.6898L11.541 37.0563L4.45904 50.2792ZM78.0737 85.9127L144.606 50.2792L137.525 37.0563L70.9918 72.6898L78.0737 85.9127Z"
-        fill="currentColor"></path>
-    </svg>
-  </a>
+  <div class="header-main">
+    <a href="/">
+      <svg viewBox="0 0 203 27" fill="none">
+        <path
+          d="M3 3.08234L4.15126 0.863194L0.5 3.08234H3ZM46.3369 3.08234H48.8369L45.1857 0.863194L46.3369 3.08234ZM24.6685 14.3236L23.5172 16.5428L24.6685 17.1401L25.8197 16.5428L24.6685 14.3236ZM43.8369 3.08234V26.9176H48.8369V3.08234H43.8369ZM5.5 26.9176V3.08234H0.5V26.9176H5.5ZM1.84874 5.30148L23.5172 16.5428L25.8197 12.1045L4.15126 0.863194L1.84874 5.30148ZM25.8197 16.5428L47.4882 5.30148L45.1857 0.863194L23.5172 12.1045L25.8197 16.5428Z"
+          fill="currentColor"></path>
+        <path
+          d="M83.7911 14.9213H57.063M57.063 26.9176V3.08234H100.4"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linejoin="bevel"></path>
+        <path
+          d="M108.2 14.9213H151.537V3.08234H108.2V26.9176"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linejoin="bevel"></path>
+        <path
+          d="M203 3.08234H182.125H161.972V13.8624H200.451L200.451 24.2633H159.338"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linejoin="bevel"></path>
+      </svg>
+    </a>
+
+    <button type="button"
+      ><svg viewBox="0 0 54 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0.75 35.5V31.125H53.25V35.5H0.75ZM0.75 20.1875V15.8125H53.25V20.1875H0.75ZM0.75 4.875V0.5H53.25V4.875H0.75Z"
+          fill="#D9D9D9"></path>
+      </svg>
+    </button>
+  </div>
+
   <NavBar />
 </header>
 <style>
   header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .header-main {
+    display: flex;
     align-items: center;
-    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
-    background-color: #1e1e1e;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
   }
 
   a {
     text-decoration: inherit;
     color: #ffffff;
-    height: 2rem;
+    height: 1rem;
   }
 
   a svg {
-    height: 2rem;
+    height: 1rem;
     width: auto;
   }
 
@@ -42,23 +66,25 @@ import NavBar from "./NavBar.astro";
     color: #c6ae59;
   }
 
-  @media only screen and (min-width: 768px) {
-    header {
-      background-color: inherit;
-    }
+  button {
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    background: #1e1e1e;
+    border-radius: 5px;
+  }
 
-    .nav-container {
-      display: flex;
-      flex-direction: column;
-      padding: 2rem;
-      position: fixed;
-      top: calc(100% / 3);
-      right: 0;
-      text-align: end;
-    }
+  button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 
-    a {
-      display: none;
-    }
+  button:is(:hover, :focus-within) {
+    color: #313131;
   }
 </style>
