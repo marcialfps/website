@@ -1,20 +1,27 @@
 ---
-import Card from "../../components/Card.astro";
 import Heading from "../../components/Heading.astro";
+import Hexagon from "../../components/Hexagon.astro";
 import Tag from "../../components/Tag.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="marcialfps - Post">
   <main>
-    <img class="polygon-background" src="/icons/polygons-back.svg" />
     <Heading
-      level={2}
-      upperCase
+      level={1}
       title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
     />
-    <div class="tags-container">
-      <Tag isCategory content="Astronomy" />
+    <div class="hexagon-group">
+      <Hexagon />
+      <Hexagon />
+      <Hexagon />
+    </div>
+    <div class="hashtags">
+      <Tag isCategory content="Software" />
+      <Tag isCategory content="Architecture" />
+      <Tag isCategory content="AWS" />
+    </div>
+    <div class="tag">
       <Tag content="02/05/2023" />
     </div>
     <p>
@@ -22,16 +29,9 @@ import Layout from "../../layouts/Layout.astro";
       tellus in vestibulum. In venenatis leo massa, sit amet commodo libero
       auctor non. Aenean lobortis, nisl nec hendrerit semper, enim nisl
       consectetur arcu, dignissim placerat lorem tellus eu elit. Vivamus in
-      justo eu urna interdum vulputate. Curabitur nec urna ultricies, varius
-      urna sit amet, dictum sem. Vestibulum et dui at leo pellentesque porta in
-      convallis ante. Nunc mattis sagittis mattis. Sed ac gravida odio.
-      Suspendisse nec tincidunt velit, sit amet tempus ex. Fusce in quam at
-      purus tristique pharetra. Cras tincidunt vestibulum rhoncus. Nullam
-      feugiat, dui in auctor imperdiet, tellus metus lacinia elit, at euismod
-      est turpis nec tortor. Cras at egestas sem, a luctus elit. Nam luctus
-      faucibus nunc et elementum.
+      justo eu urna interdum vulputate.
     </p>
-    <img class="post-img" src="/images/aboutPhoto.jpg" />
+    <img src="/images/img-test.png  " />
     <p>
       Ut vitae scelerisque lorem. Ut erat libero, pulvinar a tincidunt et,
       efficitur vel felis. Cras ultrices quam lacus, sagittis rhoncus leo
@@ -75,31 +75,35 @@ import Layout from "../../layouts/Layout.astro";
 </Layout>
 
 <style>
-  .polygon-background {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    height: 85%;
+  .hexagon-group {
+    display: flex;
+    gap: 0.15rem;
+    align-self: center;
   }
 
-  .tags-container {
+  .hashtags {
+    align-self: center;
     display: flex;
-    justify-content: space-between;
+    gap: 0.75rem;
     flex-wrap: wrap;
   }
 
-  .post-img {
-    width: 100%;
+  .tag {
+    align-self: center;
+  }
+
+  img {
+    width: auto;
     height: auto;
+    border-radius: 13px;
   }
 
   p {
-    font-family: "Arimo";
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
-    line-height: 1rem;
+    line-height: 1.5rem;
     color: #ffffff;
   }
 </style>
