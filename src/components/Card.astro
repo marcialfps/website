@@ -1,16 +1,30 @@
 ---
 export interface Props {
   width?: string;
+  image?: string;
 }
 
-const { width } = Astro.props;
+const { width, image } = Astro.props;
 ---
 
-<div class="card" style={{ width: width }}>
-  <slot />
+<div class="card-container">
+  {image && <img src={image} />}
+  <div class:list={["card", { divided: image }]} style={{ width: width }}>
+    <slot />
+  </div>
 </div>
 <style>
+  .card-container {
+    display: flex;
+    gap: 0.25rem;
+  }
+
   .card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    gap: 0.75rem;
+
     background: #313131;
     font-family: "Roboto";
     font-style: normal;
@@ -20,5 +34,17 @@ const { width } = Astro.props;
     color: #ffffff;
     padding: 1rem 2rem;
     border-radius: 13px;
+  }
+
+  .divided {
+    border-radius: 0px 13px 13px 0px;
+  }
+
+  img {
+    display: block;
+    width: 30%;
+    object-fit: cover;
+    /* flex-basis: 25%; */
+    border-radius: 13px 0px 0px 13px;
   }
 </style>

@@ -8,19 +8,23 @@ const { isCategory, content } = Astro.props;
 ---
 
 <div class={isCategory ? "category-tag" : "date-tag"}>
-  {isCategory && "#"}{content}
+  <p>{isCategory && "#"}{content.toUpperCase()}</p>
 </div>
 <style>
   div {
     border: 3px solid;
     border-radius: 34px;
-    font-family: "Arimo";
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 0.75rem;
     width: fit-content;
-    padding: 0.25rem;
+    padding: 0 0.5rem;
     color: #ffffff;
+  }
+
+  p {
+    margin: 0;
   }
 
   .category-tag {
