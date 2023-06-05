@@ -7,99 +7,75 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="marcialfps - Blog">
   <main>
-    <img class="polygon-background" src="icons/polygons-back.svg" />
     <Heading level={1} upperCase title="Blog" />
-    <div class="content">
-      <Card width="25%">
-        <div class="post-card-container">
-          <Heading level={2} title="Lorem ipsum dolor" />
-          <div class="tags-container">
-            <Tag isCategory content="Astronomy" />
-            <Tag content="02/05/2023" />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis
-            nibh eu consequat rhoncus. Ut ornare mi nec felis tincidunt
-            hendrerit. Pellentesque vitae condimentum urna, nec interdum quam.
-            Curabitur eleifend orci vitae risus cursus sagittis. Sed et nisi
-            nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
-            felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla
-            mi. Phasellus ultrices cursus finibus. Nullam semper turpis eu lorem
-            finibus ultrices.
-          </p>
+    <a href="/posts/post">
+      <Card image="/images/img-test.png">
+        <Heading
+          level={2}
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        />
+        <Tag isCategory content="Astronomy" />
+        <Tag content="03/05/2023" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+          ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis
+          nibh eu consequat rhoncus.
+        </p>
+      </Card>
+    </a>
+    <a href="/posts/post">
+      <Card>
+        <Heading
+          level={2}
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        />
+        <div class="hashtags">
+          <Tag isCategory content="Programming" />
+          <Tag isCategory content="React" />
         </div>
+        <Tag content="13/05/2023" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+          ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis
+          nibh eu consequat rhoncus.
+        </p>
       </Card>
-      <Card width="25%">
-        <Heading level={2} title="Lorem ipsum dolor" />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
-        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
-        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
-        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
-        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
-        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
-        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
+    </a>
+    <a href="/posts/post">
+      <Card image="/images/img-test.png">
+        <Heading
+          level={2}
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        />
+        <div class="hashtags">
+          <Tag isCategory content="Software" />
+          <Tag isCategory content="Architecture" />
+          <Tag isCategory content="AWS" />
+        </div>
+        <Tag content="31/05/2023" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+          ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis
+          nibh eu consequat rhoncus.
+        </p>
       </Card>
-      <Card width="25%">
-        <Heading level={2} title="Lorem ipsum dolor" />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
-        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
-        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
-        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
-        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
-        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
-        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
-      </Card>
-      <Card width="25%">
-        <Heading level={2} title="Lorem ipsum dolor" />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
-        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
-        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
-        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
-        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
-        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
-        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
-      </Card>
-      <Card width="25%">
-        <Heading level={2} title="Lorem ipsum dolor" />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
-        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
-        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
-        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
-        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
-        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
-        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
-      </Card>
-    </div>
+    </a>
   </main>
 </Layout>
 
 <style>
-  .polygon-background {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    height: 85%;
+  a {
+    text-decoration: inherit;
+    color: inherit;
   }
 
-  .tags-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  p {
+    margin: 0;
   }
 
-  .content {
-    height: auto;
+  .hashtags {
     display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 3rem;
-  }
-
-  .post-card-container {
-    display: flex;
-    flex-direction: column;
     gap: 0.75rem;
+    flex-wrap: wrap;
   }
 </style>
