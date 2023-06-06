@@ -5,9 +5,9 @@ import Hexagon from "../../components/Hexagon.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="marcialfps - Create post">
+<Layout title="marcialfps - Admin">
     <main>
-        <Heading level={1} upperCase title="Create post" />
+        <Heading level={1} upperCase title="Admin" />
         <div class="hexagon-group">
             <Hexagon />
             <Hexagon />
@@ -15,9 +15,9 @@ import Layout from "../../layouts/Layout.astro";
         </div>
         <Card>
             <div class="form">
-                <input type="text" placeholder="Title" />
-                <textarea rows="4" cols="50"> Write here...</textarea>
-                <input type="button" value="Publish" />
+                <input type="text" placeholder="User" />
+                <input type="password" placeholder="Password" />
+                <input type="button" value="Enter" />
             </div>
         </Card>
     </main>
@@ -36,10 +36,9 @@ import Layout from "../../layouts/Layout.astro";
         gap: 0.5rem;
     }
 
-    input,
-    textarea {
+    input {
         width: 75vw;
-
+        height: 2rem;
         border: 2px solid #313131;
         border-radius: 4px;
 
@@ -47,13 +46,5 @@ import Layout from "../../layouts/Layout.astro";
         font-style: normal;
         font-weight: 400;
         font-size: 1rem;
-    }
-
-    input {
-        height: 2rem;
-    }
-
-    textarea {
-        height: 20rem;
     }
 </style>
