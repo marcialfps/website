@@ -7,33 +7,12 @@ export interface Props {
 const { isCategory, content } = Astro.props;
 ---
 
-<div class={isCategory ? "category-tag" : "date-tag"}>
-  <p>{isCategory && "#"}{content.toUpperCase()}</p>
+<div
+  class:list={[
+    "border-2 rounded-full font-serif text-xs w-fit px-2 text-white",
+    { "border-yellow bg-yellowTransparent": isCategory },
+    { "border-lightGrey bg-lightGreyTransparent": !isCategory },
+  ]}
+>
+  <p class="m-0">{isCategory && "#"}{content.toUpperCase()}</p>
 </div>
-<style>
-  div {
-    border: 3px solid;
-    border-radius: 34px;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.75rem;
-    width: fit-content;
-    padding: 0 0.5rem;
-    color: #ffffff;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .category-tag {
-    border-color: #c6ae59;
-    background: rgba(198, 174, 89, 0.1);
-  }
-
-  .date-tag {
-    border-color: #afafaf;
-    background: rgba(198, 174, 89, 0.1);
-  }
-</style>

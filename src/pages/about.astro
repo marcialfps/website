@@ -6,10 +6,10 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="marcialfps - About">
-  <main>
+  <main class="flex flex-col gap-2 pb-4 px-3">
     <Heading level={1} upperCase title="About me" />
-    <img class="about-photo" src="/images/aboutPhoto.jpg" />
-    <div class="hexagon-group">
+    <img class="rounded-xl" src="/images/aboutPhoto.jpg" />
+    <div class="flex self-center gap-1">
       <Hexagon />
       <Hexagon />
       <Hexagon />
@@ -40,24 +40,3 @@ import Layout from "../layouts/Layout.astro";
     </Card>
   </main>
 </Layout>
-
-<style>
-  img {
-    width: auto;
-    height: auto;
-    border-radius: 13px;
-  }
-  .hexagon-group {
-    display: flex;
-    gap: 0.15rem;
-    align-self: center;
-  }
-
-  .about-photo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    width: 100%;
-  }
-</style>

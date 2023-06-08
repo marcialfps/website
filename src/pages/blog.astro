@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="marcialfps - Blog">
-  <main>
+  <main class="flex flex-col gap-2 pb-4 px-3">
     <Heading level={1} upperCase title="Blog" />
     <a href="/posts/post">
       <Card image="/images/img-test.png">
@@ -14,9 +14,13 @@ import Layout from "../layouts/Layout.astro";
           level={2}
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
         />
-        <Tag isCategory content="Astronomy" />
-        <Tag content="03/05/2023" />
-        <p>
+        <div class="flex justify-between">
+          <div class="flex gap-3">
+            <Tag isCategory content="Astronomy" />
+          </div>
+          <Tag content="03/05/2023" />
+        </div>
+        <p class="m-0">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
           ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis
           nibh eu consequat rhoncus.
@@ -29,12 +33,14 @@ import Layout from "../layouts/Layout.astro";
           level={2}
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
         />
-        <div class="hashtags">
-          <Tag isCategory content="Programming" />
-          <Tag isCategory content="React" />
+        <div class="flex justify-between">
+          <div class="flex gap-3">
+            <Tag isCategory content="Programming" />
+            <Tag isCategory content="React" />
+          </div>
+          <Tag content="13/05/2023" />
         </div>
-        <Tag content="13/05/2023" />
-        <p>
+        <p class="m-0">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
           ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis
           nibh eu consequat rhoncus.
@@ -47,13 +53,15 @@ import Layout from "../layouts/Layout.astro";
           level={2}
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
         />
-        <div class="hashtags">
-          <Tag isCategory content="Software" />
-          <Tag isCategory content="Architecture" />
-          <Tag isCategory content="AWS" />
+        <div class="flex justify-between">
+          <div class="flex gap-3">
+            <Tag isCategory content="Software" />
+            <Tag isCategory content="Architecture" />
+            <Tag isCategory content="AWS" />
+          </div>
+          <Tag content="31/05/2023" />
         </div>
-        <Tag content="31/05/2023" />
-        <p>
+        <p class="m-0">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
           ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis
           nibh eu consequat rhoncus.
@@ -62,20 +70,3 @@ import Layout from "../layouts/Layout.astro";
     </a>
   </main>
 </Layout>
-
-<style>
-  a {
-    text-decoration: inherit;
-    color: inherit;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .hashtags {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-</style>

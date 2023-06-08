@@ -6,17 +6,19 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="marcialfps - Projects">
-  <main>
+  <main class="flex flex-col gap-2 pb-4 px-3">
     <Heading level={1} upperCase title="My projects" />
     <Card image="/images/letthebadguys.png">
       <Heading level={2} title="Let the Bad Guys Roll" />
-      <Tag isCategory content="GameJam" />
-      <p>
+      <div class="flex gap-3">
+        <Tag isCategory content="GameJam" />
+      </div>
+      <p class="m-0">
         Demo game developed for the GMTK 2022 Game Jam. The planet is under the
         attack of the diciest army in town and it is up to you to protect it.
       </p>
       <a
-        class="icon"
+        class="h-8 w-8 hover:text-yellow"
         target="_blank"
         href="https://ulitol97.itch.io/let-the-bad-guys-roll"
       >
@@ -32,11 +34,11 @@ import Layout from "../layouts/Layout.astro";
         level={2}
         title="Assessment of preclinical learning using virtual reality based education for nursing students"
       />
-      <div class="hashtags">
+      <div class="flex gap-3">
         <Tag isCategory content="Research" />
         <Tag isCategory content="Paper" />
       </div>
-      <p>
+      <p class="m-0">
         A case study is presented to analyze the use of VR technologies to learn
         healthcare techniques in the first year of nursing school. A preclinical
         VR setting was developed using Unity and 3D modeling and animation,
@@ -44,7 +46,7 @@ import Layout from "../layouts/Layout.astro";
         practices.
       </p>
       <a
-        class="icon"
+        class="h-8 w-8 hover:text-yellow"
         target="_blank"
         href="https://www.researchgate.net/publication/370289016_Assessment_of_preclinical_learning_using_virtual_reality_based_education_for_nursing_students"
       >
@@ -57,15 +59,17 @@ import Layout from "../layouts/Layout.astro";
     </Card>
     <Card image="/images/lanzar.png">
       <Heading level={2} title="LanzAR (Lanzarote in Augmented Reality)" />
-      <Tag isCategory content="EndOfDegreeProject" />
-      <p>
+      <div class="flex gap-3">
+        <Tag isCategory content="EndOfDegreeProject" />
+      </div>
+      <p class="m-0">
         Uses AR in order to improve the cultural tourism of the island of
         Lanzarote. Also, it is a social project, where students from art school
         Pancho Lasso participate in the recording of the historical
         representations.
       </p>
       <a
-        class="icon"
+        class="h-8 w-8 hover:text-yellow"
         target="_blank"
         href="https://github.com/marcialfps/HistoricalRep_TFG"
       >
@@ -78,30 +82,3 @@ import Layout from "../layouts/Layout.astro";
     </Card>
   </main>
 </Layout>
-
-<style>
-  p {
-    margin: 0;
-  }
-
-  .hashtags {
-    display: flex;
-    gap: 0.75rem;
-  }
-
-  .icon {
-    height: 2rem;
-    width: 2rem;
-  }
-
-  .icon svg {
-    height: 2rem;
-    width: auto;
-    text-decoration: inherit;
-    color: #ffffff;
-  }
-
-  .icon svg:is(:hover, :focus-within) {
-    color: #c6ae59;
-  }
-</style>

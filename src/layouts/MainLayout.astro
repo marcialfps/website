@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header";
 
 export interface Props {
@@ -24,7 +25,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="m-0 h-screen flex flex-col justify-between gap-4">
     <Header client:load />
     <slot />
   </body>
@@ -43,96 +44,8 @@ const { title } = Astro.props;
     font-family: system-ui, sans-serif;
     background: #0f0f0f;
   }
-  body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-  }
   code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-  }
-  header {
-    display: flex;
-    flex-direction: column;
-  }
-  .header-main {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 0.75rem;
-    border-bottom: 1px solid #313131;
-  }
-  .logo-anchor {
-    text-decoration: inherit;
-    color: #ffffff;
-    height: 1rem;
-  }
-
-  .logo-anchor svg {
-    height: 1rem;
-    width: auto;
-  }
-
-  .logo-anchor:is(:hover, :focus-within) {
-    color: #c6ae59;
-  }
-
-  .menu {
-    border: none;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 2rem;
-    height: 2rem;
-    background: #1e1e1e;
-    border-radius: 5px;
-  }
-
-  .menu svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    color: #d9d9d9;
-  }
-
-  .menu:is(:hover, :focus-within) {
-    color: #313131;
-  }
-  .nav-container {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    padding: 0 1rem;
-    background: #313131;
-    margin: 0;
-  }
-
-  .nav-container li {
-    font-family: "Oswald";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 36px;
-  }
-
-  .nav-container li a {
-    text-decoration: inherit;
-    color: #ffffff;
-  }
-
-  .nav-container li a:is(:hover, :focus-within) {
-    color: #c6ae59;
-  }
-  main {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0px 0.75rem 1rem;
   }
 </style>
