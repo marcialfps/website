@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function Header() {
-  const [isOpened, setOpened] = useState(false);
+export default function Header({ pathname }: { pathname: string }) {
+  const [isOpen, setOpen] = useState(false);
 
   return (
     <header className="flex flex-col">
@@ -39,12 +39,9 @@ export default function Header() {
         <button
           className="border-0 rounded p-0 flex justify-center items-center w-8 h-8 bg-darkGrey hover:bg-grey focus:bg-grey"
           type="button"
-          onClick={() => {
-            console.log("hey");
-            setOpened(!isOpened);
-          }}
+          onClick={() => setOpen(!isOpen)}
         >
-          {isOpened ? (
+          {isOpen ? (
             <svg className="w-6 h-6 text-white" viewBox="0 -960 960 960">
               <path
                 d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
@@ -62,11 +59,13 @@ export default function Header() {
         </button>
       </div>
 
-      {isOpened && (
+      {isOpen && (
         <ul className="list-none flex justify-center gap-12 py-1 m-0 bg-darkGrey">
           <li className="text-serif text-lg">
             <a
-              className="no-underline text-white hover:text-yellow focus:text-yellow"
+              className={`no-underline ${
+                pathname.startsWith("/about") ? "text-yellow" : "text-white"
+              } hover:text-yellow focus:text-yellow`}
               href="/about"
             >
               About
@@ -74,19 +73,26 @@ export default function Header() {
           </li>
           <li className="text-serif text-lg">
             <a
-              className="no-underline text-white hover:text-yellow focus:text-yellow"
+              className={`no-underline ${
+                pathname.startsWith("/projects") ? "text-yellow" : "text-white"
+              }`}
               href="/projects"
             >
               Projects
             </a>
           </li>
-          <li className="text-serif text-lg">
+          <li className="flex flex-row items-center gap-2 text-serif text-lg">
             <a
-              className="no-underline text-white hover:text-yellow focus:text-yellow"
-              href="/blog"
+              className={`no-underline ${
+                pathname.startsWith("/blog")
+                  ? "text-yellow"
+                  : "text-lightGreyTransparent"
+              }`}
+              href="#"
             >
               Blog
             </a>
+            <div className="text-xs">(soon)</div>
           </li>
         </ul>
       )}
