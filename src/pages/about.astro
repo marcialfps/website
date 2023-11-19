@@ -1,23 +1,20 @@
 ---
+import PageLayout from "../layouts/PageLayout.astro";
 import Card from "../components/Card.astro";
-import Heading from "../components/Heading.astro";
-import Hexagon from "../components/Hexagon.astro";
-import Layout from "../layouts/Layout.astro";
+import Separator from "../components/Separator.astro";
 ---
 
-<Layout title="marcialfps - About">
-  <main class="flex flex-col gap-2 pb-4 px-3">
-    <Heading level={1} upperCase title="About me" />
-    <img class="rounded-xl" src="/images/aboutPhoto.jpg" />
-    <div class="flex self-center gap-1">
-      <Hexagon />
-      <Hexagon />
-      <Hexagon />
-    </div>
+<PageLayout title="About me">
+  <section class="flex flex-col flex-wrap lg:flex-row lg:flex-nowrap gap-2">
+    <img
+      class="w-full h-full lg:max-w-sm rounded-xl"
+      src="/images/aboutPhoto.jpg"
+    />
+    <Separator />
     <Card>
       <p>
-        I'm Marcial, a software engineer and solutions architect, and I work as
-        a fullstack engineer.
+        I&apos;m Marcial, a software engineer and solutions architect, and I
+        work as a fullstack engineer.
       </p>
       <p>
         Being part of the team that develops the Halstack design system has
@@ -38,5 +35,5 @@ import Layout from "../layouts/Layout.astro";
         between costs, security and high availability.
       </p>
     </Card>
-  </main>
-</Layout>
+  </section>
+</PageLayout>

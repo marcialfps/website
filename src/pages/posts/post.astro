@@ -1,21 +1,18 @@
 ---
+import PageLayout from "../../layouts/PageLayout.astro";
 import Heading from "../../components/Heading.astro";
-import Hexagon from "../../components/Hexagon.astro";
+import Hexagon from "../../components/Hexagon.svg";
+import Separator from "../../components/Separator.astro";
 import Tag from "../../components/Tag.astro";
-import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="marcialfps - Post">
+<PageLayout title="marcialfps - Post">
   <main class="flex flex-col gap-2 pb-4 px-3">
     <Heading
       level={1}
       title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
     />
-    <div class="self-center flex gap-1">
-      <Hexagon />
-      <Hexagon />
-      <Hexagon />
-    </div>
+    <Separator />
     <div class="self-center flex gap-3 flex-wrap">
       <Tag isCategory content="Software" />
       <Tag isCategory content="Architecture" />
@@ -72,4 +69,4 @@ import Layout from "../../layouts/Layout.astro";
       tincidunt.
     </p>
   </main>
-</Layout>
+</PageLayout>
