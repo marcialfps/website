@@ -1,92 +1,32 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import { getCollection } from "astro:content";
 import Card from "../components/Card.astro";
 import Heading from "../components/Heading.astro";
 import Tag from "../components/Tag.astro";
+
+const allPosts = await getCollection("posts");
 ---
 
-<PageLayout title="marcialfps - Blog">
-  <main class="flex flex-col gap-2 pb-4 px-3">
-    <Heading level={1} upperCase title="Blog" />
-    <!-- <Posts client:load>
-      <Card slot="card" image="/images/img-test.png">
-        <Heading
-          slot="heading"
-          level={2}
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-        />
-        <div class="flex justify-between">
-          <div class="flex gap-3">
-            <Tag slot="category" isCategory content="Astronomy" />
-          </div>
-          <Tag slot="date" content="03/05/2023" />
-        </div>
-        <p class="m-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis
-          nibh eu consequat rhoncus.
-        </p>
-      </Card>
-    </Posts> -->
-    <!-- <a href="/posts/post">
-      <Card image="/images/img-test.png">
-        <Heading
-          level={2}
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-        />
-        <div class="flex justify-between">
-          <div class="flex gap-3">
-            <Tag isCategory content="Astronomy" />
-          </div>
-          <Tag content="03/05/2023" />
-        </div>
-        <p class="m-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis
-          nibh eu consequat rhoncus.
-        </p>
-      </Card>
-    </a> -->
-    <!--     <a href="/posts/post">
-      <Card>
-        <Heading
-          level={2}
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-        />
-        <div class="flex justify-between">
-          <div class="flex gap-3">
-            <Tag isCategory content="Programming" />
-            <Tag isCategory content="React" />
-          </div>
-          <Tag content="13/05/2023" />
-        </div>
-        <p class="m-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis
-          nibh eu consequat rhoncus.
-        </p>
-      </Card>
-    </a>
-    <a href="/posts/post">
-      <Card image="/images/img-test.png">
-        <Heading
-          level={2}
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-        />
-        <div class="flex justify-between">
-          <div class="flex gap-3">
-            <Tag isCategory content="Software" />
-            <Tag isCategory content="Architecture" />
-            <Tag isCategory content="AWS" />
-          </div>
-          <Tag content="31/05/2023" />
-        </div>
-        <p class="m-0">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis
-          nibh eu consequat rhoncus.
-        </p>
-      </Card>
-    </a> -->
-  </main>
+<PageLayout title="Blog">
+  <section class="flex flex-col flex-wrap lg:flex-row lg:flex-nowrap gap-2">
+    {
+      allPosts.map((post) => (
+        <a href={`/posts/${post.slug}`}>
+          <Card image={post.data.image.url}>
+            <Heading level={2} title={post.data.title} />
+            <div class="flex justify-between">
+              <div class="flex gap-3">
+                {post.data.tags.map((tag) => (
+                  <Tag isCategory content={tag} />
+                ))}
+              </div>
+              <Tag content={post.data.pubDate.toString().slice(0, 10)} />
+            </div>
+            <p class="m-0">{post.data.description}</p>
+          </Card>
+        </a>
+      ))
+    }
+  </section>
 </PageLayout>
