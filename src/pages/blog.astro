@@ -5,14 +5,14 @@ import Card from "../components/Card.astro";
 import Heading from "../components/Heading.astro";
 import Tag from "../components/Tag.astro";
 
-const allPosts = await getCollection("posts");
+const allPosts = await getCollection("blog");
 ---
 
 <PageLayout title="Blog">
   <section class="flex flex-col flex-wrap lg:flex-row lg:flex-nowrap gap-2">
     {
       allPosts.map((post) => (
-        <a href={`/posts/${post.slug}`}>
+        <a href={`/blog/${post.slug}`}>
           <Card image={post.data.image.url}>
             <Heading level={2} title={post.data.title} />
             <div class="flex justify-between">
@@ -21,7 +21,7 @@ const allPosts = await getCollection("posts");
                   <Tag isCategory content={tag} />
                 ))}
               </div>
-              <Tag content={post.data.pubDate.toString().slice(0, 10)} />
+              <Tag content={post.data.pubDate.toLocaleDateString()} />
             </div>
             <p class="m-0">{post.data.description}</p>
           </Card>

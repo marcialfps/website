@@ -2,20 +2,27 @@
 import PageLayout from "./PageLayout.astro";
 import Heading from "../components/Heading.astro";
 import type { MarkdownLayoutProps } from "astro";
+import Separator from "../components/Separator.astro";
+import Tag from "../components/Tag.astro";
 
 type Props = MarkdownLayoutProps<{
   title: string;
   author: string;
-  date: string;
+  tags: string[];
+  pubDate: Date;
 }>;
 
 const { frontmatter } = Astro.props;
 ---
 
 <PageLayout title={frontmatter.title}>
-  <Heading
-    level={3}
-    title={`Written by ${frontmatter.author} on ${frontmatter.date}`}
-  />
+  <div class="flex flex-col items-center gap-4">
+    <Separator />
+    <div class="flex gap-3 wrap">
+      {frontmatter.tags.map((tag) => <Tag isCategory content={tag} />)}
+    </div>
+    <Tag content={frontmatter.pubDate.toLocaleDateString()} />
+  </div>
+
   <slot />
 </PageLayout>
