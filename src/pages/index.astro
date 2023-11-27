@@ -5,29 +5,34 @@ import Separator from "../components/Separator.astro";
 ---
 
 <MainLayout>
-  <main class="flex flex-col justify-between gap-8 py-8 px-3">
-    <div
-      class="self-center flex flex-col lg:flex-row items-center justify-center"
+  <main class="flex flex-col justify-between gap-8">
+    <section
+      class="relative w-full h-[calc(100vh-50px)] py-8 px-3 self-center flex flex-col lg:flex-row items-center justify-center"
     >
       <div class="self-start">
         <Separator />
       </div>
 
-      <img class="w-9/12 lg:mx-2" src="/images/mainPhoto.png" />
+      <img
+        class="relative w-9/12 lg:mx-2 transition duration-500 ease-in"
+        src="/images/mainPhoto.png"
+      />
 
       <div
         class="flex font-serif text-4xl text-white my-4 lg:mx-4 self-center text-center"
       >
-        <h1 class="font-bold">Marcial F/</h1>
-        <h2 class="font-light">Software engineer</h2>
+        <h1 class="font-bold text-yellow">Marcial F</h1>
+        <h2 class="font-light">/Computer engineer</h2>
       </div>
 
       <div class="self-end">
         <Separator />
       </div>
-    </div>
+    </section>
 
-    <section class="fixed bottom-4 left-0 flex flex-col gap-2 px-3">
+    <section
+      class="relative w-full h-screen py-8 px-3 flex flex-col justify-center gap-2 px-3"
+    >
       <Message>
         <p class="m-0">Hi there 🙋‍♂️ I&apos;m Marcial</p>
       </Message>
