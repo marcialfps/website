@@ -12,7 +12,7 @@ const { title } = Astro.props;
 
 <BaseLayout title={`${title} - marcialfps`}>
   <main class="flex flex-col gap-2 py-4 px-3">
-    <Heading level={1} upperCase title={title} />
+    <Heading level={1} title={title} />
     <slot />
   </main>
   <Footer />

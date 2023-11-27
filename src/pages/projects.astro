@@ -8,7 +8,7 @@ import Tag from "../components/Tag.astro";
 
 <PageLayout title="My projects">
   <section class="flex flex-col flex-wrap lg:flex-row lg:flex-nowrap gap-2">
-    <Card image="/images/letthebadguys.png">
+    <Card mode="vertical" image="/images/letthebadguys.png">
       <Heading level={2} title="Let the Bad Guys Roll" />
       <div class="flex gap-3">
         <Tag isCategory content="GameJam" />
@@ -30,7 +30,7 @@ import Tag from "../components/Tag.astro";
       </a>
     </Card>
     <Separator />
-    <Card>
+    <Card mode="vertical">
       <Heading
         level={2}
         title="Assessment of preclinical learning using virtual reality based education for nursing students"
@@ -59,7 +59,7 @@ import Tag from "../components/Tag.astro";
       </a>
     </Card>
     <Separator />
-    <Card image="/images/lanzar.png">
+    <Card mode="vertical" image="/images/lanzar.png">
       <Heading level={2} title="LanzAR (Lanzarote in Augmented Reality)" />
       <div class="flex gap-3">
         <Tag isCategory content="EndOfDegreeProject" />

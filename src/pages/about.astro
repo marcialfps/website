@@ -2,6 +2,7 @@
 import PageLayout from "../layouts/PageLayout.astro";
 import Card from "../components/Card.astro";
 import Separator from "../components/Separator.astro";
+import Heading from "../components/Heading.astro";
 ---
 
 <PageLayout title="About me">
@@ -12,31 +13,34 @@ import Separator from "../components/Separator.astro";
     />
     <Separator />
     <Card>
+      <Heading level={2} title="💻/Engineering" />
       <p>
-        🧍🏽 I am Marcial, a software engineer and a change agent from Lanzarote,
-        in the archipielago of the Canary Islands, Spain.
-      </p>
-      <p>
-        💻 I was part of the team that developed the Halstack design system that
-        is used internally by DXC. Now, I am working on the maintenance and
+        I was part of the team that developed the Halstack design system that is
+        used internally by DXC. Now, I am working on the maintenance and
         development of a suite of web apps in charge of the deployment of other
         applications and their infrastructure in AWS. This task requires
         knowledge of AWS infrastructure, Jenkins pipelines, and Terraform.
       </p>
       <p>
-        🧑🏽 I consider myself a person who likes to learn and work horizontally
-        with all the team members. I really like to feel that my work as a
-        software engineer really helps people in their daily lives.
+        I consider myself a person who likes to learn and work horizontally with
+        all the team members. I really like to feel that my work as a software
+        engineer really helps people in their daily lives.
       </p>
+    </Card>
+    <Card>
+      <Heading level={2} title="🫂/Volunteering" />
       <p>
-        🫱🏼‍🫲🏽 I have been volunteer in multiple organizations and projects since
-        2014. I am the technical secretary of Prensa Juvenil Canaria NGO and the
+        I have been volunteer in multiple organizations and projects since 2014.
+        I am the technical secretary of Prensa Juvenil Canaria NGO and the
         coordinator of the organization with European Youth Press. I have
         organized different projects that are related with youth participation.
       </p>
+    </Card>
+    <Card>
+      <Heading level={2} title="⚽/Hobbies" />
       <p>
-        ⚽ I like football, Formula 1, tennis and astronomy. I try to be
-        sportive and workout daily.
+        I like football, Formula 1, tennis and astronomy. I try to be sportive
+        and workout daily.
       </p>
     </Card>
   </section>
