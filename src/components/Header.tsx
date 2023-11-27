@@ -84,15 +84,12 @@ export default function Header({ pathname }: { pathname: string }) {
           <li className="flex flex-row items-center gap-2 text-serif text-lg">
             <a
               className={`no-underline ${
-                pathname.startsWith("/blog")
-                  ? "text-yellow"
-                  : "text-lightGreyTransparent"
-              }`}
-              href="#"
+                pathname.startsWith("/blog") ? "text-yellow" : "text-white"
+              } hover:text-yellow focus:text-yellow`}
+              href="/blog"
             >
               Blog
             </a>
-            <div className="text-xs">(soon)</div>
           </li>
         </ul>
       )}
