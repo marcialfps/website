@@ -14,5 +14,5 @@ const { isCategory, content } = Astro.props;
     { "border-lightGrey bg-lightGreyTransparent": !isCategory },
   ]}
 >
-  <p class="m-0">{isCategory && "#"}{content.toUpperCase()}</p>
+  <p class="m-0 whitespace-nowrap uppercase">{isCategory && "#"}{content}</p>
 </div>
