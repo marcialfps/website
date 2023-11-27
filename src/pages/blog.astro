@@ -12,7 +12,7 @@ const allPosts = await getCollection("blog");
   <section class="flex flex-col flex-wrap lg:flex-row lg:flex-nowrap gap-2">
     {
       allPosts.map((post) => (
-        <a href={`/blog/${post.slug}`}>
+        <a href={`/website/blog/${post.slug}`}>
           <Card image={post.data.image.url}>
             <Heading level={2} title={post.data.title} />
             <div class="flex flex-wrap gap-3">
