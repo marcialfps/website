@@ -8,7 +8,7 @@ export default function Header({ pathname }: { pathname: string }) {
       <div className="flex items-center justify-between py-2 px-3 border-b-2 border-darkGrey">
         <a
           className="no-underline text-white h-4 hover:text-yellow focus:text-yellow"
-          href="/"
+          href="./"
         >
           <svg className="h-4" viewBox="0 0 203 27" fill="none">
             <path
@@ -66,7 +66,7 @@ export default function Header({ pathname }: { pathname: string }) {
               className={`no-underline ${
                 pathname.startsWith("/about") ? "text-yellow" : "text-white"
               } hover:text-yellow focus:text-yellow`}
-              href="/about"
+              href="./about"
             >
               About
             </a>
@@ -76,7 +76,7 @@ export default function Header({ pathname }: { pathname: string }) {
               className={`no-underline ${
                 pathname.startsWith("/projects") ? "text-yellow" : "text-white"
               }`}
-              href="/projects"
+              href="./projects"
             >
               Projects
             </a>
@@ -86,7 +86,7 @@ export default function Header({ pathname }: { pathname: string }) {
               className={`no-underline ${
                 pathname.startsWith("/blog") ? "text-yellow" : "text-white"
               } hover:text-yellow focus:text-yellow`}
-              href="/blog"
+              href="./blog"
             >
               Blog
             </a>
