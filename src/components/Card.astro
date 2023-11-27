@@ -1,16 +1,35 @@
 ---
 interface Props {
   image?: string;
+  mode?: "vertical" | "horizontal";
 }
 
-const { image } = Astro.props;
+const { image, mode } = Astro.props;
 ---
 
-<div class="w-fit lg:w-fit flex flex-col justify-items-stretch gap-1">
-  {image && <img class="block h-44 object-cover rounded-t-xl" src={image} />}
+<div
+  class:list={[
+    "w-fit lg:w-fit flex justify-items-stretch gap-1",
+    { "flex-col": mode === "vertical" },
+  ]}
+>
+  {
+    image && (
+      <img
+        class:list={[
+          "block object-cover  bg-grey",
+          { "rounded-t-xl h-1/4": mode === "vertical" },
+          { "rounded-l-xl w-1/4": !mode || mode === "horizontal" },
+        ]}
+        src={image}
+      />
+    )
+  }
   <div
     class:list={[
-      "lg:h-full flex flex-col gap-3 py-4 px-8 bg-darkGrey text-white font-sans font-normal text-base leading-6 rounded-b-xl",
+      "lg:h-full flex flex-col gap-3 py-4 px-8 bg-darkGrey text-white font-sans font-normal text-base leading-6",
+      { "rounded-b-xl": mode === "vertical" },
+      { "rounded-r-xl": !mode || mode === "horizontal" },
       { "rounded-xl": !image },
     ]}
   >
