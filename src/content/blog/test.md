@@ -18,7 +18,7 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 
 3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
 
-![test image](/images/img-test.png)
+![test image](/website/images/img-test.png)
 
 ## What's next
 

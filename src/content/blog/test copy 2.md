@@ -8,11 +8,6 @@ image:
   alt: "The Astro logo with the word One."
 tags: ["astro", "blogging", "learning in public"]
 ---
-
-# My First Blog Post
-
-Published on: 2022-07-01
-
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
 ## What I've accomplished
@@ -23,7 +18,7 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 
 3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
 
-![test image](/images/img-test.png)
+![test image](/website/images/img-test.png)
 
 ## What's next
 
