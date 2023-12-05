@@ -3,45 +3,51 @@ import PageLayout from "../layouts/PageLayout.astro";
 import Card from "../components/Card.astro";
 import Separator from "../components/Separator.astro";
 import Heading from "../components/Heading.astro";
+import { Image } from "astro:assets";
+import aboutPhoto from "../assets/aboutPhoto.jpg";
 ---
 
 <PageLayout title="About me">
-  <section class="flex flex-col flex-wrap lg:flex-row lg:flex-nowrap gap-2">
-    <img
-      class="w-full h-full lg:max-w-sm rounded-xl"
-      src="/website/images/aboutPhoto.jpg"
+  <section class="flex flex-col flex-wrap gap-2">
+    <Image
+      class="block object-cover w-full lg:h-1/4 rounded-xl"
+      src={aboutPhoto}
+      alt="Picture about me"
     />
     <Separator />
-    <Card>
-      <Heading level={2} title="💻/Engineering" />
-      <p>
-        I was part of the team that developed the Halstack design system that is
-        used internally by DXC. Now, I am working on the maintenance and
-        development of a suite of web apps in charge of the deployment of other
-        applications and their infrastructure in AWS. This task requires
-        knowledge of AWS infrastructure, Jenkins pipelines, and Terraform.
-      </p>
-      <p>
-        I consider myself a person who likes to learn and work horizontally with
-        all the team members. I really like to feel that my work as a software
-        engineer really helps people in their daily lives.
-      </p>
-    </Card>
-    <Card>
-      <Heading level={2} title="🫂/Volunteering" />
-      <p>
-        I have been volunteer in multiple organizations and projects since 2014.
-        I am the technical secretary of Prensa Juvenil Canaria NGO and the
-        coordinator of the organization with European Youth Press. I have
-        organized different projects that are related with youth participation.
-      </p>
-    </Card>
-    <Card>
-      <Heading level={2} title="⚽/Hobbies" />
-      <p>
-        I like football, Formula 1, tennis and astronomy. I try to be sportive
-        and workout daily.
-      </p>
-    </Card>
+    <div class="flex flex-col lg:flex-row gap-2">
+      <Card>
+        <Heading level={2} title="💻/Engineering" />
+        <p>
+          I was part of the team that developed the Halstack design system that
+          is used internally by DXC. Now, I am working on the maintenance and
+          development of a suite of web apps in charge of the deployment of
+          other applications and their infrastructure in AWS. This task requires
+          knowledge of AWS infrastructure, Jenkins pipelines, and Terraform.
+        </p>
+        <p>
+          I consider myself a person who likes to learn and work horizontally
+          with all the team members. I really like to feel that my work as a
+          software engineer really helps people in their daily lives.
+        </p>
+      </Card>
+      <Card>
+        <Heading level={2} title="🫂/Volunteering" />
+        <p>
+          I have been volunteer in multiple organizations and projects since
+          2014. I am the technical secretary of Prensa Juvenil Canaria NGO and
+          the coordinator of the organization with European Youth Press. I have
+          organized different projects that are related with youth
+          participation.
+        </p>
+      </Card>
+      <Card>
+        <Heading level={2} title="⚽/Hobbies" />
+        <p>
+          I like football, Formula 1, tennis and astronomy. I try to be sportive
+          and workout daily.
+        </p>
+      </Card>
+    </div>
   </section>
 </PageLayout>

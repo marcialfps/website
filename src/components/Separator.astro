@@ -1,5 +1,10 @@
+---
+import { Image } from "astro:assets";
+import hexagon from "../assets/hexagon.svg";
+---
+
 <div class="flex lg:flex-col self-center gap-1 animate-pulse">
-  <img src="/website/icons/hexagon.svg" />
-  <img src="/website/icons/hexagon.svg" />
-  <img src="/website/icons/hexagon.svg" />
+  <Image src={hexagon} alt="Hexagon icon" />
+  <Image src={hexagon} alt="Hexagon icon" />
+  <Image src={hexagon} alt="Hexagon icon" />
 </div>

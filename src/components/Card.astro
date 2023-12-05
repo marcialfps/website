@@ -1,10 +1,12 @@
 ---
+import { Image } from "astro:assets";
 interface Props {
-  image?: string;
+  image?: ImageMetadata | string;
+  imageAlt?: string;
   mode?: "vertical" | "horizontal";
 }
 
-const { image, mode } = Astro.props;
+const { image, imageAlt, mode } = Astro.props;
 ---
 
 <div
@@ -14,16 +16,27 @@ const { image, mode } = Astro.props;
   ]}
 >
   {
-    image && (
-      <img
-        class:list={[
-          "block object-cover  bg-grey",
-          { "rounded-t-xl h-1/4": mode === "vertical" },
-          { "rounded-l-xl w-1/4": !mode || mode === "horizontal" },
-        ]}
-        src={image}
-      />
-    )
+    image &&
+      (typeof image === "string" ? (
+        <img
+          src={image as string}
+          class:list={[
+            "block object-cover bg-grey",
+            { "rounded-t-xl h-1/4": mode === "vertical" },
+            { "rounded-l-xl w-1/4": !mode || mode === "horizontal" },
+          ]}
+        />
+      ) : (
+        <Image
+          class:list={[
+            "block object-cover bg-grey",
+            { "rounded-t-xl h-1/4": mode === "vertical" },
+            { "rounded-l-xl w-1/4": !mode || mode === "horizontal" },
+          ]}
+          src={image as ImageMetadata}
+          alt={imageAlt || "Image inside a card component"}
+        />
+      ))
   }
   <div
     class:list={[

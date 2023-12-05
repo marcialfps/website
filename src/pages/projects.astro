@@ -4,11 +4,17 @@ import Card from "../components/Card.astro";
 import Heading from "../components/Heading.astro";
 import Separator from "../components/Separator.astro";
 import Tag from "../components/Tag.astro";
+import letthebadguysrollImage from "../assets/letthebadguys.png";
+import lanzarImage from "../assets/lanzar.png";
 ---
 
 <PageLayout title="My projects">
   <section class="flex flex-col flex-wrap lg:flex-row lg:flex-nowrap gap-2">
-    <Card mode="vertical" image="/website/images/letthebadguys.png">
+    <Card
+      mode="vertical"
+      image={letthebadguysrollImage}
+      imageAlt="Let the bad guys roll icon"
+    >
       <Heading level={2} title="Let the Bad Guys Roll" />
       <div class="flex gap-3">
         <Tag isCategory content="GameJam" />
@@ -59,7 +65,7 @@ import Tag from "../components/Tag.astro";
       </a>
     </Card>
     <Separator />
-    <Card mode="vertical" image="/website/images/lanzar.png">
+    <Card mode="vertical" image={lanzarImage} imageAlt="Icon of LanzAR project">
       <Heading level={2} title="LanzAR (Lanzarote in Augmented Reality)" />
       <div class="flex gap-3">
         <Tag isCategory content="EndOfDegreeProject" />

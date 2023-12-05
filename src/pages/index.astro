@@ -2,10 +2,12 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Message from "../components/Message.astro";
 import Separator from "../components/Separator.astro";
+import { Image } from "astro:assets";
+import mainPhoto from "../assets/mainPhoto.png";
 ---
 
 <MainLayout>
-  <main class="flex flex-col justify-between gap-8">
+  <main class="flex flex-col lg:flex-row justify-between gap-8">
     <section
       class="relative w-full h-[calc(100vh-50px)] py-8 px-3 self-center flex flex-col lg:flex-row items-center justify-center"
     >
@@ -13,16 +15,18 @@ import Separator from "../components/Separator.astro";
         <Separator />
       </div>
 
-      <img
-        class="relative w-9/12 lg:mx-2 transition duration-500 ease-in"
-        src="/website/images/mainPhoto.png"
-      />
-
-      <div
-        class="flex font-serif text-4xl text-white my-4 lg:mx-4 self-center text-center"
-      >
-        <h1 class="font-bold text-yellow">Marcial F</h1>
-        <h2 class="font-light">/Computer engineer</h2>
+      <div class="flex flex-col items-center justify-center">
+        <Image
+          class="relative w-9/12 lg:mx-2 transition duration-500 ease-in"
+          src={mainPhoto}
+          alt="Picture of Marcial"
+        />
+        <div
+          class="flex font-serif text-4xl text-white my-4 lg:mx-4 self-center text-center"
+        >
+          <h1 class="font-bold text-yellow">Marcial F</h1>
+          <h2 class="font-light">/Computer engineer</h2>
+        </div>
       </div>
 
       <div class="self-end">
