@@ -11,7 +11,7 @@ const { image, imageAlt, mode } = Astro.props;
 
 <div
   class:list={[
-    "w-fit lg:w-fit flex justify-items-stretch gap-1",
+    "w-fit lg:w-full flex justify-items-stretch gap-1",
     { "flex-col": mode === "vertical" },
   ]}
 >
@@ -42,7 +42,7 @@ const { image, imageAlt, mode } = Astro.props;
     class:list={[
       "lg:h-full flex flex-col gap-3 py-4 px-8 bg-darkGrey text-white font-sans font-normal text-base leading-6",
       { "rounded-b-xl": mode === "vertical" },
-      { "rounded-r-xl": !mode || mode === "horizontal" },
+      { "grow rounded-r-xl": !mode || mode === "horizontal" },
       { "rounded-xl": !image },
     ]}
   >
