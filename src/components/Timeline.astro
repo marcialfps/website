@@ -1,0 +1,47 @@
+---
+export interface Props {
+  items: { title: string; subtitle: string; description?: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="flex flex-col">
+  {
+    items.map((item, index) => (
+      <div class="flex flex-col">
+        <div class="flex items-center">
+          <svg
+            class="w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            width="13"
+            height="16"
+            viewBox="0 0 13 16"
+            fill="none"
+          >
+            <path
+              d="M6.5 0.369141L12.9952 4.11914L12.9952 11.6191L6.5 15.3691L0.00480938 11.6191L0.00480938 4.11914L6.5 0.369141Z"
+              fill="#AFAFAF"
+            />
+          </svg>
+          <p class="font-sans font-normal text-base text-yellow text-white m-0">
+            {item.title}
+          </p>
+        </div>
+        <div class="flex">
+          <div class="flex justify-center w-6">
+            {index !== items.length - 1 && (
+              <div class="border-s border-dotted border-lightGrey min-h-full h-12" />
+            )}
+          </div>
+
+          <p class="">
+            {item.subtitle}
+            {item.description && "/"}
+            {item.description && <i>{item.description}</i>}
+          </p>
+        </div>
+      </div>
+    ))
+  }
+</div>
