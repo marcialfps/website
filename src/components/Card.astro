@@ -11,7 +11,7 @@ const { image, imageAlt, mode } = Astro.props;
 
 <div
   class:list={[
-    "w-fit lg:w-full flex justify-items-stretch gap-1",
+    "w-full lg:w-96 lg:h-96 flex justify-items-stretch gap-1",
     { "flex-col": mode === "vertical" },
   ]}
 >
@@ -22,16 +22,16 @@ const { image, imageAlt, mode } = Astro.props;
           src={image as string}
           class:list={[
             "block object-cover bg-grey",
-            { "rounded-t-xl h-1/4": mode === "vertical" },
-            { "rounded-l-xl w-1/4": !mode || mode === "horizontal" },
+            { "rounded-t-xl h-1/3": mode === "vertical" },
+            { "rounded-l-xl h-1/4": !mode || mode === "horizontal" },
           ]}
         />
       ) : (
         <Image
           class:list={[
             "block object-cover bg-grey",
-            { "rounded-t-xl h-1/4": mode === "vertical" },
-            { "rounded-l-xl w-1/4": !mode || mode === "horizontal" },
+            { "rounded-t-xl h-1/3": mode === "vertical" },
+            { "rounded-l-xl h-1/4": !mode || mode === "horizontal" },
           ]}
           src={image as ImageMetadata}
           alt={imageAlt || "Image inside a card component"}
@@ -40,10 +40,10 @@ const { image, imageAlt, mode } = Astro.props;
   }
   <div
     class:list={[
-      "lg:h-full flex flex-col gap-3 py-4 px-8 bg-darkGrey text-white font-sans font-normal text-base leading-6",
+      "h-2/3 flex flex-col justify-between gap-3 py-4 px-8 bg-gradient-to-b from-darkGrey text-white font-sans font-normal text-base leading-6",
       { "rounded-b-xl": mode === "vertical" },
       { "grow rounded-r-xl": !mode || mode === "horizontal" },
-      { "rounded-xl": !image },
+      { "h-full rounded-xl": !image },
     ]}
   >
     <slot />
