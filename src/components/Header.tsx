@@ -64,21 +64,23 @@ export default function Header({ pathname }: { pathname: string }) {
           <li className="text-serif text-lg">
             <a
               className={`no-underline ${
-                pathname.endsWith("/about") ? "text-yellow" : "text-white"
+                pathname.endsWith("/website/") ? "text-yellow" : "text-white"
               } hover:text-yellow focus:text-yellow`}
-              href="/website/about"
+              href="/website/"
             >
-              About
+              Home
             </a>
           </li>
           <li className="text-serif text-lg">
             <a
               className={`no-underline ${
-                pathname.endsWith("/projects") ? "text-yellow" : "text-white"
+                pathname.endsWith("website/volunteer")
+                  ? "text-yellow"
+                  : "text-white"
               }`}
-              href="/website/projects"
+              href="/website/volunteer"
             >
-              Projects
+              Volunteering
             </a>
           </li>
           <li className="flex flex-row items-center gap-2 text-serif text-lg">
