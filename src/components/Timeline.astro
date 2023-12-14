@@ -37,8 +37,9 @@ const { items } = Astro.props;
 
           <p class="shrink">
             {item.subtitle}
-            {item.description && "/"}
-            {item.description && <i>{item.description}</i>}
+            {item.description && (
+              <span class="font-light">/ {item.description}</span>
+            )}
           </p>
         </div>
       </div>
