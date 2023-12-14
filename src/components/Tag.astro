@@ -4,15 +4,11 @@ export interface Props {
   content: string;
 }
 
-const { isCategory, content } = Astro.props;
+const { content } = Astro.props;
 ---
 
 <div
-  class:list={[
-    "border-2 rounded-full font-serif text-xs w-fit px-2 text-white",
-    { "border-yellow bg-yellowTransparent": isCategory },
-    { "border-lightGrey bg-lightGreyTransparent": !isCategory },
-  ]}
+  class="border-yellow bg-yellowTransparent border-2 rounded-full font-sans text-xs w-fit px-2 text-white"
 >
-  <p class="m-0 whitespace-nowrap uppercase">{isCategory && "#"}{content}</p>
+  <p class="m-0 whitespace-nowrap uppercase">{content}</p>
 </div>
