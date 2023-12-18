@@ -6,7 +6,7 @@ export default function Header({ pathname }: { pathname: string }) {
   return (
     <header className="flex flex-col">
       <div className="flex justify-center py-2 px-3 border-b-2 border-darkGrey">
-        <div className="flex justify-between items-center lg:w-3/5">
+        <div className="flex justify-between items-center w-full lg:w-3/5">
           <a
             className="no-underline text-white h-4 hover:text-yellow focus:text-yellow"
             href="/website/"
