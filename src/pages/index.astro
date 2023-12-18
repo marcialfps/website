@@ -38,19 +38,19 @@ import externalIcon from "../assets/externalIcon.svg";
   <Separator />
 
   <section
-    class="flex flex-col gap-4 lg:flex-row lg:gap-2 items-center lg:h-1/2 bg-gradient-to-t lg:bg-gradient-to-l from-darkGrey rounded-xl p-12"
+    class="flex flex-col gap-2 lg:flex-row items-center max-h-[calc(100svh-140px)] lg:h-1/2 bg-gradient-to-t lg:bg-gradient-to-l from-darkGrey rounded-xl p-8 lg:p-12"
   >
     <div class="flex flex-col items-center gap-6 w-full lg:w-2/5">
       <div class="flex-1 min-h-0 min-w-0 relative">
         <Image
           src={mainPhoto2}
           alt="Picture of Marcial"
-          class="absolute w-full animate-fade-up animate-twice animate-ease-in-out animate-duration-[3000ms] animate-alternate"
+          class="absolute max-h-52 lg:max-h-max w-full animate-fade-up animate-twice animate-ease-in-out animate-duration-[3000ms] animate-alternate"
         />
         <Image
           src={mainPhoto}
           alt="Picture of Marcial"
-          class="z-10 w-full animate-fade-up animate-once animate-delay-[5000ms] animate-duration-[3000ms] animate-ease-in-out"
+          class="z-10 max-h-52 lg:max-h-max w-full animate-fade-up animate-once animate-delay-[5000ms] animate-duration-[3000ms] animate-ease-in-out"
         />
       </div>
 
