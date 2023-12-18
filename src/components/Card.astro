@@ -13,6 +13,7 @@ const { image, imageAlt, mode } = Astro.props;
   class:list={[
     "w-full lg:w-96 lg:h-96 flex justify-items-stretch gap-1",
     { "flex-col": mode === "vertical" },
+    { "lg:h-fit": !image },
   ]}
 >
   {

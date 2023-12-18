@@ -8,28 +8,22 @@ import Card from "../components/Card.astro";
 import Timeline from "../components/Timeline.astro";
 
 // Images
-import mainPhoto from "../assets/mainPhoto.png";
-import mainPhoto2 from "../assets/mainPhoto2.png";
-import volunteerPhoto from "../assets/volunteerPhoto.jpg";
+import volunteerPhoto from "../assets/volunteerPhoto.png";
+import volunteerPhoto2 from "../assets/volunteerPhoto2.jpg";
 ---
 
 <MainLayout>
   <Separator />
 
   <section
-    class="flex flex-col gap-4 lg:flex-row lg:gap-2 items-center lg:h-1/2 bg-gradient-to-t lg:bg-gradient-to-l from-yellow rounded-xl p-12"
+    class="flex flex-col gap-2 lg:flex-row items-center lg:h-1/2 bg-gradient-to-t lg:bg-gradient-to-l from-yellow rounded-xl p-8 lg:p-12"
   >
     <div class="flex flex-col items-center gap-6 w-full lg:w-2/5">
       <div class="flex-1 min-h-0 min-w-0 relative">
         <Image
-          src={mainPhoto2}
+          src={volunteerPhoto}
           alt="Picture of Marcial"
-          class="absolute w-full animate-fade-up animate-twice animate-ease-in-out animate-duration-[3000ms] animate-alternate"
-        />
-        <Image
-          src={mainPhoto}
-          alt="Picture of Marcial"
-          class="z-10 w-full animate-fade-up animate-once animate-delay-[5000ms] animate-duration-[3000ms] animate-ease-in-out"
+          class="z-10 max-h-52 lg:max-h-max w-full animate-fade-up animate-once animate-duration-[3000ms] animate-ease-in-out"
         />
       </div>
 
@@ -63,24 +57,32 @@ import volunteerPhoto from "../assets/volunteerPhoto.jpg";
           target="_blank"
           href="mailto:marcialfco@live.com"
         >
-          <svg class="h-8" fill="currentColor" viewBox="0 -960 960 960">
-            <path
-              d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280 320-200v-80L480-520 160-720v80l320 200Z"
-            ></path>
-          </svg>
+          <svg
+            class="h-8"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+            ></path><path d="M3 7l9 6l9 -6"></path></svg
+          >
         </a>
         <a
           class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
           target="_blank"
           href="https://twitter.com/marcialfps"
         >
-          <svg class="h-8" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-            ></path>
-          </svg>
+          <svg class="h-8" fill="none" viewBox="0 0 1200 1227"
+            ><path
+              fill="currentColor"
+              d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
+            ></path></svg
+          >
         </a>
-        <a
+        <!-- <a
           class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
           target="_blank"
           href="https://www.instagram.com/marcialfps/"
@@ -90,7 +92,7 @@ import volunteerPhoto from "../assets/volunteerPhoto.jpg";
               d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
             ></path>
           </svg>
-        </a>
+        </a> -->
       </div>
     </div>
     <Image
@@ -98,17 +100,21 @@ import volunteerPhoto from "../assets/volunteerPhoto.jpg";
       alt="Separator"
       class="rotate-90 lg:rotate-0 h-1/2"
     />
-    <div class="flex flex-col gap-2 font-serif">
+    <div
+      class="flex flex-col gap-2 font-serif animate-fade-down animate-delay-1000"
+    >
       <div>
         <h1 class="text-white font-bold text-6xl lg:text-7xl">Marcial F</h1>
 
-        <h2 class="text-black text-3xl lg:text-4xl font-light">Change agent</h2>
+        <h2 class="text-lightGrey text-3xl lg:text-4xl font-light">
+          Change agent
+        </h2>
       </div>
 
       <p
-        class="font-sans text-lg font-light leading-6 font-normal text-black m-0"
+        class="font-sans text-lg font-light leading-6 font-normal text-white m-0"
       >
-        Volunteer in Canarian Youth Prees since 2014 and participant in multiple
+        Volunteer in Canarian Youth Press since 2014 and participant in multiple
         organizations and projects related with youth and participation.
       </p>
     </div>
@@ -118,19 +124,19 @@ import volunteerPhoto from "../assets/volunteerPhoto.jpg";
 
   <Image
     class="flex-auto block object-cover lg:h-1/5 rounded-xl"
-    src={volunteerPhoto}
+    src={volunteerPhoto2}
     alt="Picture about me"
   />
 
-  <section class="flex flex-col items-center gap-4">
-    <Heading level={2} title="Volunteering" />
+  <Heading level={2} title="Volunteering" />
+  <section class="flex flex-col items-center">
     <Card>
       <Timeline
         items={[
           {
-            title: "2014",
-            subtitle: "Coordinator",
-            description: "Tiagua Joven Youth Group",
+            title: "2022 - NOW",
+            subtitle: "Representative and coordinator of Canarian Youth Press",
+            description: "European Youth Press",
           },
           {
             title: "2015 - NOW",
@@ -138,32 +144,22 @@ import volunteerPhoto from "../assets/volunteerPhoto.jpg";
             description: "Canarian Youth Press NGO",
           },
           {
-            title: "2017",
-            subtitle: "Structured dialogue ambassador",
-            description: "Spanish Youth Council",
-          },
-          {
             title: "2020",
             subtitle: "Jury in Galardon Joven Canarias",
             description: "Gobierno de Canarias",
           },
           {
-            title: "2022 - NOW",
-            subtitle: "Representative and coordinator of Canarian Youth Press",
-            description: "European Youth Press",
+            title: "2017",
+            subtitle: "Structured dialogue ambassador",
+            description: "Spanish Youth Council",
+          },
+          {
+            title: "2014",
+            subtitle: "Coordinator",
+            description: "Tiagua Joven Youth Group",
           },
         ]}
       />
     </Card>
   </section>
-
-  <p class="font-sans text-base text-white lg:self-end">
-    Want to know more? See my <a
-      class="underline hover:text-yellow focus:text-yellow"
-      href="/website/blog"
-    >
-      Blog</a
-    >{" "}
-     📰
-  </p>
 </MainLayout>
