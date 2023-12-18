@@ -83,8 +83,8 @@ export default function Header({ pathname }: { pathname: string }) {
                 pathname.endsWith("website/volunteer")
                   ? "text-yellow"
                   : "text-white"
-              }`}
-              href="/website/volunteer"
+              } hover:text-yellow focus:text-yellow`}
+              href="/website/volunteer/"
             >
               Volunteering
             </a>
@@ -94,7 +94,7 @@ export default function Header({ pathname }: { pathname: string }) {
               className={`no-underline ${
                 pathname.endsWith("/blog") ? "text-yellow" : "text-white"
               } hover:text-yellow focus:text-yellow`}
-              href="/website/blog"
+              href="/website/blog/"
             >
               Blog
             </a>
