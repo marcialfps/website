@@ -6,21 +6,27 @@ import Heading from "../components/Heading.astro";
 import Tag from "../components/Tag.astro";
 
 const allPosts = await getCollection("blog");
+const allTags = allPosts.flatMap((post) => post.data.tags);
+const tagFilters = [...new Set<string>(allTags)];
 ---
 
 <PageLayout title="Blog">
-  <section class="flex flex-col flex-wrap lg:flex-row lg:flex-nowrap gap-2">
+  <section class="flex flex-wrap gap-2">
+    {tagFilters.map((tag) => <Tag isCategory content={tag} />)}
+  </section>
+
+  <section class="flex flex-col flex-wrap justify-center lg:flex-row gap-2">
     {
       allPosts.map((post) => (
         <a href={`/website/blog/${post.slug}`}>
           <Card image={post.data.image.url}>
-            <Heading level={2} title={post.data.title} />
+            <Heading level={3} title={post.data.title} />
             <div class="flex flex-wrap gap-3">
               {post.data.tags.map((tag) => (
-                <Tag isCategory content={tag} />
+                <Tag content={tag} />
               ))}
             </div>
-            <Tag content={post.data.pubDate.toLocaleDateString()} />
+           <!--  <Heading level={5} title={post.data.pubDate.toLocaleDateString()} /> -->
             <p class="m-0">{post.data.description}</p>
           </Card>
         </a>
