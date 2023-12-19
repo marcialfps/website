@@ -9,7 +9,7 @@ export default function Header({ pathname }: { pathname: string }) {
         <div className="flex justify-between items-center w-full lg:w-3/5">
           <a
             className="no-underline text-white h-4 hover:text-yellow focus:text-yellow"
-            href="/website/"
+            href="/"
             aria-label="Go to home page"
           >
             <svg className="h-4" viewBox="0 0 203 27" fill="none">
@@ -72,9 +72,9 @@ export default function Header({ pathname }: { pathname: string }) {
           <li className="text-serif text-lg">
             <a
               className={`no-underline ${
-                pathname.endsWith("/website/") ? "text-yellow" : "text-white"
+                pathname.endsWith("/") ? "text-yellow" : "text-white"
               } hover:text-yellow focus:text-yellow`}
-              href="/website/"
+              href="/"
               aria-label="Home page"
             >
               Home
@@ -87,7 +87,7 @@ export default function Header({ pathname }: { pathname: string }) {
                   ? "text-yellow"
                   : "text-white"
               } hover:text-yellow focus:text-yellow`}
-              href="/website/volunteer/"
+              href="/volunteer"
               aria-label="Volunteering page"
             >
               Volunteering
@@ -98,7 +98,7 @@ export default function Header({ pathname }: { pathname: string }) {
               className={`no-underline ${
                 pathname.endsWith("/blog") ? "text-yellow" : "text-white"
               } hover:text-yellow focus:text-yellow`}
-              href="/website/blog/"
+              href="/blog"
               aria-label="Blog page"
             >
               Blog

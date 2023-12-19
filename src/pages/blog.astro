@@ -18,7 +18,7 @@ const tagFilters = [...new Set<string>(allTags)];
   <section class="flex flex-col flex-wrap justify-center lg:flex-row gap-2">
     {
       allPosts.map((post) => (
-        <a href={`/website/blog/${post.slug}`} aria-label={`Read post ${post.data.title}`}>
+        <a href={`/blog/${post.slug}`} aria-label={`Read post ${post.data.title}`}>
           <Card image={post.data.image.url}>
             <Heading level={3} title={post.data.title} />
             <div class="flex flex-wrap gap-3">
