@@ -72,7 +72,7 @@ export default function Header({ pathname }: { pathname: string }) {
           <li className="text-serif text-lg">
             <a
               className={`no-underline ${
-                pathname.endsWith("/") ? "text-yellow" : "text-white"
+                window.location.pathname === "/" ? "text-yellow" : "text-white"
               } hover:text-yellow focus:text-yellow`}
               href="/"
               aria-label="Home page"
@@ -83,9 +83,7 @@ export default function Header({ pathname }: { pathname: string }) {
           <li className="text-serif text-lg">
             <a
               className={`no-underline ${
-                pathname.endsWith("website/volunteer")
-                  ? "text-yellow"
-                  : "text-white"
+                pathname.endsWith("/volunteer/") ? "text-yellow" : "text-white"
               } hover:text-yellow focus:text-yellow`}
               href="/volunteer"
               aria-label="Volunteering page"
@@ -96,7 +94,7 @@ export default function Header({ pathname }: { pathname: string }) {
           <li className="flex flex-row items-center gap-2 text-serif text-lg">
             <a
               className={`no-underline ${
-                pathname.endsWith("/blog") ? "text-yellow" : "text-white"
+                pathname.endsWith("/blog/") ? "text-yellow" : "text-white"
               } hover:text-yellow focus:text-yellow`}
               href="/blog"
               aria-label="Blog page"
