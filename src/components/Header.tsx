@@ -10,6 +10,7 @@ export default function Header({ pathname }: { pathname: string }) {
           <a
             className="no-underline text-white h-4 hover:text-yellow focus:text-yellow"
             href="/website/"
+            aria-label="Go to home page"
           >
             <svg className="h-4" viewBox="0 0 203 27" fill="none">
               <path
@@ -41,6 +42,7 @@ export default function Header({ pathname }: { pathname: string }) {
             className="border-0 rounded p-0 flex justify-center items-center w-8 h-8 bg-darkGrey hover:bg-grey focus:bg-grey"
             type="button"
             onClick={() => setOpen(!isOpen)}
+            aria-label="Menu"
           >
             {isOpen ? (
               <svg className="w-6 h-6 text-white" viewBox="0 -960 960 960">
@@ -73,6 +75,7 @@ export default function Header({ pathname }: { pathname: string }) {
                 pathname.endsWith("/website/") ? "text-yellow" : "text-white"
               } hover:text-yellow focus:text-yellow`}
               href="/website/"
+              aria-label="Home page"
             >
               Home
             </a>
@@ -85,6 +88,7 @@ export default function Header({ pathname }: { pathname: string }) {
                   : "text-white"
               } hover:text-yellow focus:text-yellow`}
               href="/website/volunteer/"
+              aria-label="Volunteering page"
             >
               Volunteering
             </a>
@@ -95,6 +99,7 @@ export default function Header({ pathname }: { pathname: string }) {
                 pathname.endsWith("/blog") ? "text-yellow" : "text-white"
               } hover:text-yellow focus:text-yellow`}
               href="/website/blog/"
+              aria-label="Blog page"
             >
               Blog
             </a>
