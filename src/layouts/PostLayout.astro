@@ -17,11 +17,14 @@ const { frontmatter } = Astro.props;
 
 <PageLayout title={frontmatter.title}>
   <div class="flex flex-col items-center gap-3">
-    <Heading level={3} title={frontmatter.pubDate.toLocaleDateString()} />
-    <Separator />
+    <p class="font-sans text-base text-white">
+      {frontmatter.pubDate.toLocaleDateString()}
+    </p>
+
     <div class="flex gap-2 wrap">
       {frontmatter.tags.map((tag) => <Tag isCategory content={tag} />)}
     </div>
+    <Separator />
   </div>
 
   <slot />
