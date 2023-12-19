@@ -43,11 +43,15 @@ import aws from "../assets/aws.svg";
       <div class="flex-1 min-h-0 min-w-0 relative">
         <Image
           src={mainPhoto2}
+          format="avif"
+          quality="mid"
           alt="Picture of Marcial"
           class="absolute max-h-52 lg:max-h-max w-full animate-fade-up animate-twice animate-ease-in-out animate-duration-[3000ms] animate-alternate"
         />
         <Image
           src={mainPhoto}
+          format="avif"
+          quality="mid"
           alt="Picture of Marcial"
           class="z-10 max-h-52 lg:max-h-max w-full animate-fade-up animate-once animate-delay-[5000ms] animate-duration-[3000ms] animate-ease-in-out"
         />
@@ -122,6 +126,8 @@ import aws from "../assets/aws.svg";
       </div>
     </div>
     <Image
+      format="avif"
+      quality="low"
       src={textSeparator}
       alt="Separator"
       class="rotate-90 lg:rotate-0 h-1/2"
@@ -155,6 +161,8 @@ import aws from "../assets/aws.svg";
 
   <Image
     class="flex-auto block object-cover lg:h-1/5 rounded-xl"
+    format="avif"
+    quality="mid"
     src={aboutPhoto}
     alt="Picture about me"
   />
@@ -335,40 +343,45 @@ import aws from "../assets/aws.svg";
       class="lg:w-fit flex flex-wrap items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
     >
       <Heading level={3} title="Design" />
-      <Image src={figma} alt="Figma" />
+      <Image src={figma} alt="Figma" format="avif" quality="low" />
     </div>
     <div
       class="lg:w-fit flex flex-wrap items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
     >
       <Heading level={3} title="Languages" />
-      <Image src={javascript} alt="JavaScript" />
-      <Image src={typescript} alt="TypeScript" />
-      <Image src={html5} alt="HTML5" />
-      <Image src={css3} alt="CSS" />
+      <Image src={javascript} alt="JavaScript" format="avif" quality="low" />
+      <Image src={typescript} alt="TypeScript" format="avif" quality="low" />
+      <Image src={html5} alt="HTML5" format="avif" quality="low" />
+      <Image src={css3} alt="CSS" format="avif" quality="low" />
     </div>
     <div
       class="lg:w-fit flex flex-wrap items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
     >
       <Heading level={3} title="Libraries" />
-      <Image src={react} alt="ReactJS" />
-      <Image src={nodejs} alt="NodeJS" />
+      <Image src={react} alt="ReactJS" format="avif" quality="low" />
+      <Image src={nodejs} alt="NodeJS" format="avif" quality="low" />
     </div>
     <div
       class="lg:w-fit flex flex-wrap items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
     >
       <Heading level={3} title="Architecture" />
-      <Image src={aws} alt="Amazon Web Services" />
+      <Image src={aws} alt="Amazon Web Services" format="avif" quality="low" />
     </div>
     <div
       class="lg:w-fit flex flex-wrap items-center justify-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
     >
       <Heading level={3} title="Frameworks" />
-      <Image src={astro} alt="Astro" />
-      <Image src={nextjs} alt="NextJS" />
-      <Image src={testinglibrary} alt="Testing Library" />
-      <Image src={jest} alt="Jest" />
-      <Image src={express} alt="ExpressJS" />
-      <Image src={tailwind} alt="TailwindCSS" />
+      <Image src={astro} alt="Astro" format="avif" quality="low" />
+      <Image src={nextjs} alt="NextJS" format="avif" quality="low" />
+      <Image
+        src={testinglibrary}
+        alt="Testing Library"
+        format="avif"
+        quality="low"
+      />
+      <Image src={jest} alt="Jest" format="avif" quality="low" />
+      <Image src={express} alt="ExpressJS" format="avif" quality="low" />
+      <Image src={tailwind} alt="TailwindCSS" format="avif" quality="low" />
     </div>
   </section>
 
