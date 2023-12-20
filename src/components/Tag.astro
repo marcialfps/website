@@ -4,32 +4,11 @@ export interface Props {
   content: string;
 }
 
-const { isCategory, content } = Astro.props;
+const { content } = Astro.props;
 ---
 
-<div class={isCategory ? "category-tag" : "date-tag"}>
-  {isCategory && "#"}{content}
+<div
+  class="flex items-center border-yellow bg-yellowTransparent border-2 rounded-full font-sans font-bold text-xs w-fit px-2 text-yellow"
+>
+  <p class="m-0 whitespace-nowrap capitalize">{content}</p>
 </div>
-<style>
-  div {
-    border: 3px solid;
-    border-radius: 34px;
-    font-family: "Arimo";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.75rem;
-    width: fit-content;
-    padding: 0.25rem;
-    color: #ffffff;
-  }
-
-  .category-tag {
-    border-color: #c6ae59;
-    background: rgba(198, 174, 89, 0.1);
-  }
-
-  .date-tag {
-    border-color: #afafaf;
-    background: rgba(198, 174, 89, 0.1);
-  }
-</style>

@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import textSeparator from "../assets/textSeparator.svg";
 export interface Props {
   title: string;
   level: 5 | 4 | 3 | 2 | 1;
@@ -10,38 +12,31 @@ const { title, level, upperCase } = Astro.props;
 
 {
   level === 5 ? (
-    <h5>{upperCase ? title.toUpperCase() : title}</h5>
+    <h5 class="font-serif text-base font-light leading-10 text-white m-0">
+      {upperCase ? title.toUpperCase() : title}
+    </h5>
   ) : level === 4 ? (
-    <h4>{upperCase ? title.toUpperCase() : title}</h4>
+    <h4 class="font-serif text-lg font-light leading-10 text-white m-0">
+      {upperCase ? title.toUpperCase() : title}
+    </h4>
   ) : level === 3 ? (
-    <h3>{upperCase ? title.toUpperCase() : title}</h3>
+    <h3 class="font-serif text-xl font-light leading-8 text-white m-0">
+      {upperCase ? title.toUpperCase() : title}
+    </h3>
   ) : level === 2 ? (
-    <h2>{upperCase ? title.toUpperCase() : title}</h2>
+    <h2 class="flex justify-center items-center gap-1 font-serif text-2xl font-light text-white m-0">
+      <Image
+        src={textSeparator}
+        format="avif"
+        quality="low"
+        alt="Separator"
+        class="animate-fade-right h-6 max-w-fit"
+      />
+      {upperCase ? title.toUpperCase() : title}
+    </h2>
   ) : (
-    <h1>{upperCase ? title.toUpperCase() : title}</h1>
+    <h1 class="font-serif text-3xl font-bold leading-10 text-yellow m-0 self-center text-center">
+      {upperCase ? title.toUpperCase() : title}
+    </h1>
   )
 }
-<style>
-  * {
-    font-family: "Aldrich";
-    font-style: normal;
-    font-weight: 400;
-    color: #ffffff;
-    margin: 0;
-  }
-  h1 {
-    font-size: 2.75rem;
-    line-height: 39px;
-    letter-spacing: 0.3em;
-  }
-  h2 {
-    font-size: 2.25rem;
-  }
-  h3 {
-    font-size: 2rem;
-    color: #c6ae59;
-  }
-  h4 {
-    font-size: 1.5rem;
-  }
-</style>

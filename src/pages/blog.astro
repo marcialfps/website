@@ -1,105 +1,36 @@
 ---
+import PageLayout from "../layouts/PageLayout.astro";
+import { getCollection } from "astro:content";
 import Card from "../components/Card.astro";
 import Heading from "../components/Heading.astro";
 import Tag from "../components/Tag.astro";
-import Layout from "../layouts/Layout.astro";
+
+const allPosts = await getCollection("blog");
+const allTags = allPosts.flatMap((post) => post.data.tags);
+const tagFilters = [...new Set<string>(allTags)];
 ---
 
-<Layout title="marcialfps - Blog">
-  <main>
-    <img class="polygon-background" src="icons/polygons-back.svg" />
-    <Heading level={1} upperCase title="Blog" />
-    <div class="content">
-      <Card width="25%">
-        <div class="post-card-container">
-          <Heading level={2} title="Lorem ipsum dolor" />
-          <div class="tags-container">
-            <Tag isCategory content="Astronomy" />
-            <Tag content="02/05/2023" />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            ligula ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis
-            nibh eu consequat rhoncus. Ut ornare mi nec felis tincidunt
-            hendrerit. Pellentesque vitae condimentum urna, nec interdum quam.
-            Curabitur eleifend orci vitae risus cursus sagittis. Sed et nisi
-            nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
-            felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla
-            mi. Phasellus ultrices cursus finibus. Nullam semper turpis eu lorem
-            finibus ultrices.
-          </p>
-        </div>
-      </Card>
-      <Card width="25%">
-        <Heading level={2} title="Lorem ipsum dolor" />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
-        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
-        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
-        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
-        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
-        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
-        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
-      </Card>
-      <Card width="25%">
-        <Heading level={2} title="Lorem ipsum dolor" />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
-        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
-        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
-        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
-        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
-        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
-        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
-      </Card>
-      <Card width="25%">
-        <Heading level={2} title="Lorem ipsum dolor" />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
-        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
-        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
-        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
-        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
-        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
-        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
-      </Card>
-      <Card width="25%">
-        <Heading level={2} title="Lorem ipsum dolor" />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ligula
-        ipsum, finibus a leo ac, euismod eleifend sem. Fusce mollis nibh eu consequat
-        rhoncus. Ut ornare mi nec felis tincidunt hendrerit. Pellentesque vitae condimentum
-        urna, nec interdum quam. Curabitur eleifend orci vitae risus cursus sagittis.
-        Sed et nisi nisl. Quisque aliquam augue id hendrerit consequat. Cras a blandit
-        felis. Nullam luctus fermentum risus ut maximus. Aliquam non nulla mi. Phasellus
-        ultrices cursus finibus. Nullam semper turpis eu lorem finibus ultrices.
-      </Card>
-    </div>
-  </main>
-</Layout>
+<PageLayout title="Blog">
+  <!-- <section class="flex flex-wrap gap-2">
+    {tagFilters.map((tag) => <Tag isCategory content={tag} />)}
+  </section> -->
 
-<style>
-  .polygon-background {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    height: 85%;
-  }
-
-  .tags-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  .content {
-    height: auto;
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 3rem;
-  }
-
-  .post-card-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-</style>
+  <section class="flex flex-col flex-wrap justify-center lg:flex-row gap-2">
+    {
+      allPosts.map((post) => (
+        <a href={`/blog/${post.slug}`} aria-label={`Read post ${post.data.title}`}>
+          <Card image={post.data.image.url}>
+            <Heading level={3} title={post.data.title} />
+            <div class="flex flex-wrap gap-3">
+              {post.data.tags.map((tag) => (
+                <Tag content={tag} />
+              ))}
+            </div>
+           <!--  <Heading level={5} title={post.data.pubDate.toLocaleDateString()} /> -->
+            <p class="m-0">{post.data.description}</p>
+          </Card>
+        </a>
+      ))
+    }
+  </section>
+</PageLayout>
