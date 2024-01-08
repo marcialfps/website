@@ -68,41 +68,35 @@ export default function Header({ pathname }: { pathname: string }) {
       </div>
 
       {isOpen && (
-        <ul className="list-none flex justify-center gap-12 py-1 m-0 bg-darkGrey">
-          <li className="text-serif text-lg">
-            <a
-              className={`no-underline ${
-                window.location.pathname === "/" ? "text-yellow" : "text-white"
-              } hover:text-yellow focus:text-yellow`}
-              href="/"
-              aria-label="Home page"
-            >
-              Home
-            </a>
-          </li>
-          <li className="text-serif text-lg">
-            <a
-              className={`no-underline ${
-                pathname.endsWith("/volunteer/") ? "text-yellow" : "text-white"
-              } hover:text-yellow focus:text-yellow`}
-              href="/volunteer"
-              aria-label="Volunteering page"
-            >
-              Volunteering
-            </a>
-          </li>
-          <li className="flex flex-row items-center gap-2 text-serif text-lg">
-            <a
-              className={`no-underline ${
-                pathname.endsWith("/blog/") ? "text-yellow" : "text-white"
-              } hover:text-yellow focus:text-yellow`}
-              href="/blog"
-              aria-label="Blog page"
-            >
-              Blog
-            </a>
-          </li>
-        </ul>
+        <nav className="list-none flex justify-center gap-12 py-1 m-0 bg-darkGrey text-serif text-lg">
+          <a
+            className={`no-underline ${
+              window.location.pathname === "/" ? "text-yellow" : "text-white"
+            } hover:text-yellow focus:text-yellow`}
+            href="/"
+            aria-label="Home page"
+          >
+            Home
+          </a>
+          <a
+            className={`no-underline ${
+              pathname.endsWith("/volunteer/") ? "text-yellow" : "text-white"
+            } hover:text-yellow focus:text-yellow`}
+            href="/volunteer"
+            aria-label="Volunteering page"
+          >
+            Volunteering
+          </a>
+          <a
+            className={`no-underline ${
+              pathname.endsWith("/blog/") ? "text-yellow" : "text-white"
+            } hover:text-yellow focus:text-yellow`}
+            href="/blog"
+            aria-label="Blog page"
+          >
+            Blog
+          </a>
+        </nav>
       )}
     </header>
   );
