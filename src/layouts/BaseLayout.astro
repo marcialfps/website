@@ -1,6 +1,8 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header";
+import "@fontsource/roboto";
+import "@fontsource-variable/oswald";
 
 export interface Props {
   title: string;
@@ -15,12 +17,6 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/icons/logo.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
 
     <meta name="generator" content={Astro.generator} />
     <meta
@@ -41,8 +37,12 @@ const { title } = Astro.props;
   <Footer />
 </html>
 <style is:global>
+  :root {
+    color-scheme: dark;
+  }
+
   html {
-    font-family: system-ui, sans-serif;
+    font-family: "Roboto", system-ui, sans-serif;
     background: #0f0f0f;
   }
 </style>
