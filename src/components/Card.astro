@@ -43,7 +43,7 @@ const { image, imageAlt, mode } = Astro.props;
   }
   <div
     class:list={[
-      "h-2/3 flex flex-col justify-between gap-3 py-4 px-8 bg-gradient-to-b from-darkGrey from-50% text-white font-sans font-normal text-base leading-6",
+      "h-2/3 flex flex-col justify-between gap-3 py-4 px-8 bg-gradient-to-b from-darkGrey from-50% text-white font-normal text-base leading-6",
       { "rounded-b-xl": mode === "vertical" },
       { "grow rounded-r-xl": !mode || mode === "horizontal" },
       { "h-full rounded-xl": !image },

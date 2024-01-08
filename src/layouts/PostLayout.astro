@@ -17,7 +17,7 @@ const { frontmatter } = Astro.props;
 
 <PageLayout title={frontmatter.title}>
   <div class="flex flex-col items-center gap-3">
-    <p class="font-sans text-base text-white">
+    <p class="text-base text-white">
       {frontmatter.pubDate.toLocaleDateString()}
     </p>
 
