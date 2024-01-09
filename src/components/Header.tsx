@@ -39,13 +39,13 @@ export default function Header({ pathname }: { pathname: string }) {
           </a>
 
           <button
-            className="border-0 rounded p-0 flex justify-center items-center w-8 h-8 bg-darkGrey hover:bg-grey focus:bg-grey"
+            className="border-0 rounded p-0 flex justify-center items-center size-8 bg-darkGrey hover:bg-grey focus:bg-grey"
             type="button"
             onClick={() => setOpen(!isOpen)}
             aria-label="Menu"
           >
             {isOpen ? (
-              <svg className="w-6 h-6 text-white" viewBox="0 -960 960 960">
+              <svg className="size-6 text-white" viewBox="0 -960 960 960">
                 <path
                   d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
                   fill="currentColor"
@@ -53,7 +53,7 @@ export default function Header({ pathname }: { pathname: string }) {
               </svg>
             ) : (
               <svg
-                className="w-6 h-6 text-white"
+                className="size-6 text-white"
                 viewBox="0 0 54 36"
                 fill="none"
               >
