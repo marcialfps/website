@@ -24,23 +24,19 @@ import NewspaperIcon from "../components/icons/Newspaper.astro";
 ---
 
 <BaseLayout title="Volunteering - marcialfps - Computer engineer">
-  <Separator />
-
   <section
-    class="flex flex-col gap-2 lg:flex-row items-center lg:h-1/2 bg-gradient-to-t lg:bg-gradient-to-l from-yellow rounded-xl p-8 lg:p-12"
+    class="flex flex-col gap-1 lg:gap-2 lg:flex-row items-center bg-gradient-to-t lg:bg-gradient-to-l from-yellow rounded-xl p-6 lg:p-12"
   >
-    <div class="flex flex-col items-center gap-6 w-full lg:w-2/5">
-      <div class="flex-1 min-h-0 min-w-0 relative">
-        <Image
-          src={volunteerPhoto}
-          quality="mid"
-          alt="Picture of Marcial"
-          class="z-10 max-h-52 lg:max-h-max w-full animate-fade-up animate-once animate-duration-[3000ms] animate-ease-in-out"
-        />
-      </div>
+    <div class="flex flex-col items-center gap-4 lg:gap-6 lg:min-w-52">
+      <Image
+        src={volunteerPhoto}
+        quality="mid"
+        alt="Picture of Marcial"
+        class="z-10 size-40 lg:size-52 animate-fade-up animate-once animate-duration-[3000ms] animate-ease-in-out"
+      />
 
       <div
-        class="lg:w-fit flex items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
+        class="flex items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
       >
         <a
           class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
@@ -71,18 +67,19 @@ import NewspaperIcon from "../components/icons/Newspaper.astro";
         </a>
       </div>
     </div>
-    <TextSeparator class="rotate-90 lg:rotate-0 h-32" />
+
+    <TextSeparator class="rotate-90 lg:rotate-0 h-8 lg:h-32" />
     <div
-      class="flex flex-col gap-2 font-serif animate-fade-down animate-delay-1000"
+      class="flex flex-col shrink gap-2 font-serif animate-fade-down animate-delay-1000"
     >
       <div>
-        <h1 class="text-white font-bold text-6xl lg:text-7xl">Marcial F</h1>
+        <h1 class="text-white font-bold text-4xl lg:text-7xl">Marcial F</h1>
 
-        <h2 class="text-white text-3xl lg:text-4xl font-light">Change agent</h2>
+        <h2 class="text-white text-2xl lg:text-4xl font-light">Change agent</h2>
       </div>
 
       <p
-        class="font-sans text-lg font-light leading-6 font-normal text-white m-0"
+        class="font-sans lg:text-lg leading-6 font-normal text-white text-wrap m-0"
       >
         Volunteer in Canarian Youth Press since 2014 and participant in multiple
         organizations and projects related with youth and participation.

@@ -41,36 +41,30 @@ import aws from "../assets/aws.svg";
 import OpenLinkIcon from "../components/icons/OpenLink.astro";
 import PlayGameIcon from "../components/icons/PlayGame.astro";
 import CodeIcon from "../components/icons/Code.astro";
-
-import IconsBar from "../components/IconsBar.astro";
 ---
 
 <BaseLayout title="marcialfps - Computer engineer">
-  <Separator />
-
   <section
-    class="flex flex-col gap-2 lg:flex-row items-center lg:h-1/2 bg-gradient-to-t lg:bg-gradient-to-l from-darkGrey rounded-xl p-8 lg:p-12"
+    class="flex flex-col gap-1 lg:gap-2 lg:flex-row items-center bg-gradient-to-t lg:bg-gradient-to-l from-darkGrey rounded-xl p-6 lg:p-12"
   >
-    <div class="flex flex-col items-center gap-6 w-full lg:w-2/5">
-      <div class="flex-1 min-h-0 min-w-0 relative">
+    <div class="flex flex-col items-center gap-4 lg:gap-6 lg:min-w-52">
+      <div class="relative">
         <Image
           src={mainPhoto2}
           quality="mid"
           alt="Picture of Marcial"
-          class="absolute max-h-52 lg:max-h-max w-full animate-fade-up animate-twice animate-ease-in-out animate-duration-[3000ms] animate-alternate"
+          class="absolute size-40 lg:size-52 animate-fade-up animate-twice animate-ease-in-out animate-duration-[3000ms] animate-alternate"
         />
         <Image
           src={mainPhoto}
           quality="mid"
           alt="Picture of Marcial"
-          class="z-10 max-h-52 lg:max-h-max w-full animate-fade-up animate-once animate-delay-[5000ms] animate-duration-[3000ms] animate-ease-in-out"
+          class="z-10 size-40 lg:size-52 animate-fade-up animate-once animate-delay-[5000ms] animate-duration-[3000ms] animate-ease-in-out"
         />
       </div>
 
-      <!-- <IconsBar items={[{icon: }]} /> -->
-
       <div
-        class="lg:w-fit flex items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
+        class="flex items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
       >
         <a
           class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
@@ -110,24 +104,24 @@ import IconsBar from "../components/IconsBar.astro";
         </a>
       </div>
     </div>
-    <TextSeparator class="rotate-90 lg:rotate-0 h-32" />
+    <TextSeparator class="rotate-90 lg:rotate-0 h-8 lg:h-32" />
     <div
-      class="flex flex-col gap-2 font-serif animate-fade-down animate-delay-1000"
+      class="flex flex-col shrink gap-2 font-serif animate-fade-down animate-delay-1000"
     >
-      <p class="text-xl lg:text-xl font-light leading-8 text-white m-0">
+      <p class="text-lg lg:text-xl font-light leading-8 text-white m-0">
         Hi there 👋🏽
       </p>
 
       <div>
-        <h1 class="text-yellow font-bold text-6xl lg:text-7xl">Marcial F</h1>
+        <h1 class="text-yellow font-bold text-4xl lg:text-7xl">Marcial F</h1>
 
-        <h2 class="text-lightGrey text-3xl lg:text-4xl font-light">
+        <h2 class="text-lightGrey text-2xl lg:text-4xl font-light">
           Computer engineer
         </h2>
       </div>
 
       <p
-        class="font-sans text-lg font-light leading-6 font-normal text-white m-0"
+        class="font-sans lg:text-lg leading-6 font-normal text-white text-wrap m-0"
       >
         Full stack developer and analyst. Development of web applications in
         JavaScript and TypeScript with NextJS and Astro. REST APIs in Express
