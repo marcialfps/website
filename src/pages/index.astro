@@ -1,5 +1,5 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Separator from "../components/Separator.astro";
 import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
@@ -45,7 +45,7 @@ import CodeIcon from "../components/icons/Code.astro";
 import IconsBar from "../components/IconsBar.astro";
 ---
 
-<MainLayout>
+<BaseLayout title="marcialfps - Computer engineer">
   <Separator />
 
   <section
@@ -353,4 +353,4 @@ import IconsBar from "../components/IconsBar.astro";
     >{" "}
     📧
   </p>
-</MainLayout>
+</BaseLayout>
