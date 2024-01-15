@@ -24,7 +24,7 @@ const { title, level, upperCase } = Astro.props;
     </h3>
   ) : level === 2 ? (
     <h2 class="flex justify-center items-center gap-1 font-serif text-2xl font-light text-white m-0">
-      <TextSeparator class="rotate-90 lg:rotate-0 h-6" />
+      <TextSeparator class="h-6" />
       {upperCase ? title.toUpperCase() : title}
     </h2>
   ) : (
