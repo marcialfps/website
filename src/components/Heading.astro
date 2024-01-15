@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import textSeparator from "../assets/textSeparator.svg";
+import TextSeparator from "./icons/TextSeparator.astro";
 export interface Props {
   title: string;
   level: 5 | 4 | 3 | 2 | 1;
@@ -25,13 +24,7 @@ const { title, level, upperCase } = Astro.props;
     </h3>
   ) : level === 2 ? (
     <h2 class="flex justify-center items-center gap-1 font-serif text-2xl font-light text-white m-0">
-      <Image
-        src={textSeparator}
-        format="avif"
-        quality="low"
-        alt="Separator"
-        class="animate-fade-right h-6 max-w-fit"
-      />
+      <TextSeparator class="rotate-90 lg:rotate-0 h-6" />
       {upperCase ? title.toUpperCase() : title}
     </h2>
   ) : (

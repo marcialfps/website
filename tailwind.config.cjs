@@ -13,7 +13,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Roboto"],
-        serif: ["Oswald"],
+        serif: ["Oswald Variable"],
       },
     },
   },

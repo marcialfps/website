@@ -5,14 +5,13 @@ import mainPhoto from "../assets/mainPhoto.png";
 
 <div class="flex items-end gap-4">
   <Image
-    class="shrink-0 w-7 h-7 rounded-full"
+    class="shrink-0 size-7 rounded-full"
     src={mainPhoto}
-    format="avif"
     quality="low"
     alt="Profile picture"
   />
   <div
-    class="flex items-center gap-3 py-2 px-4 bg-yellowTransparent rounded-r-xl rounded-tl-xl border border-yellow font-sans font-normal text-white text-base"
+    class="flex items-center gap-3 py-2 px-4 bg-yellowTransparent rounded-r-xl rounded-tl-xl border border-yellow font-normal text-white text-base"
   >
     <slot />
   </div>
