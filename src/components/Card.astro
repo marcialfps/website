@@ -12,7 +12,7 @@ const { image, imageAlt, mode } = Astro.props;
 <div
   class:list={[
     "w-full lg:w-96 flex justify-items-stretch gap-1",
-    { "h-96 flex-col": mode === "vertical" },
+    { "lg:h-[32rem] flex-col": mode === "vertical" },
     { "lg:h-fit": !image },
   ]}
 >
@@ -23,7 +23,7 @@ const { image, imageAlt, mode } = Astro.props;
           src={image as string}
           class:list={[
             "block object-cover bg-grey",
-            { "rounded-t-xl h-1/3": mode === "vertical" },
+            { "h-1/2 rounded-t-xl": mode === "vertical" },
             { "rounded-l-xl w-1/4": !mode || mode === "horizontal" },
           ]}
         />
@@ -31,7 +31,7 @@ const { image, imageAlt, mode } = Astro.props;
         <Image
           class:list={[
             "block object-cover bg-grey",
-            { "rounded-t-xl h-1/3": mode === "vertical" },
+            { "h-1/2 rounded-t-xl": mode === "vertical" },
             { "rounded-l-xl w-1/4": !mode || mode === "horizontal" },
           ]}
           src={image as ImageMetadata}
@@ -42,8 +42,8 @@ const { image, imageAlt, mode } = Astro.props;
   }
   <div
     class:list={[
-      "h-2/3 flex flex-col justify-between gap-3 py-4 px-8 bg-gradient-to-b from-darkGrey from-50% text-white font-normal text-base leading-6",
-      { "rounded-b-xl": mode === "vertical" },
+      "flex flex-col justify-between gap-3 py-4 px-8 bg-gradient-to-b from-darkGrey from-50% text-white font-normal text-base leading-6",
+      { "h-1/2 rounded-b-xl": mode === "vertical" },
       { "grow rounded-r-xl": !mode || mode === "horizontal" },
       { "h-full rounded-xl": !image },
     ]}
