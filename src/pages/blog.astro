@@ -2,8 +2,6 @@
 import PageLayout from "../layouts/PageLayout.astro";
 import { getCollection } from "astro:content";
 import Card from "../components/Card.astro";
-import Heading from "../components/Heading.astro";
-import Tag from "../components/Tag.astro";
 
 const allPosts = await getCollection("blog");
 const allTags = allPosts.flatMap((post) => post.data.tags);
@@ -18,18 +16,15 @@ const tagFilters = [...new Set<string>(allTags)];
   <section class="flex flex-col flex-wrap justify-center lg:flex-row gap-2">
     {
       allPosts.map((post) => (
-        <a href={`/blog/${post.slug}`} aria-label={`Read post ${post.data.title}`}>
-          <Card image={post.data.image.url}>
-            <Heading level={3} title={post.data.title} />
-            <div class="flex flex-wrap gap-3">
-              {post.data.tags.map((tag) => (
-                <Tag content={tag} />
-              ))}
-            </div>
-           <!--  <Heading level={5} title={post.data.pubDate.toLocaleDateString()} /> -->
-            <p class="m-0">{post.data.description}</p>
-          </Card>
-        </a>
+        <Card
+          image={post.data.image.url}
+          imageAlt={post.data.title}
+          title={post.data.title}
+          tags={post.data.tags}
+          description={post.data.description}
+          link={`/blog/${post.slug}`}
+          linkText="Read"
+        />
       ))
     }
   </section>

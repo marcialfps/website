@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import PageLayout from "../../layouts/PageLayout.astro";
 import Prose from "../../components/Prose.astro";
 import Tag from "../../components/Tag.astro";
-import Separator from "../../components/Separator.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -25,9 +24,8 @@ const { Content } = await entry.render();
       </p>
 
       <div class="flex gap-2 wrap">
-        {entry.data.tags.map((tag) => <Tag isCategory content={tag} />)}
+        {entry.data.tags.map((tag) => <Tag text={tag} />)}
       </div>
-      <Separator />
     </div>
     <section
       class="text-white font-normal text-base leading-normal mx-6 lg:mx-8 gap-8"
