@@ -1,0 +1,19 @@
+---
+import ExternalLink from "./icons/ExternalLink.astro";
+
+interface Props {
+  href: string;
+  newWindow?: boolean;
+}
+
+const { href, newWindow } = Astro.props;
+---
+
+<a
+  class="hover:underline hover:scale-105 duration-300 flex items-center gap-1 text-base text-blue"
+  href={href}
+  target={newWindow ? "_blank" : "_self"}
+>
+  <slot />
+  <ExternalLink class="h-4 w-4" />
+</a>
