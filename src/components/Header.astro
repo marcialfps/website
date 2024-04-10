@@ -40,7 +40,8 @@ import VolunteerIcon from "./icons/Volunteer.astro";
 </header>
 
 <script>
-  const currentPathname = window.location.pathname.replace("/", "") || "home";
+  const currentPathname =
+    window.location.pathname.replaceAll("/", "") || "home";
   const anchor = document.getElementById(currentPathname);
   anchor?.classList.add("text-yellow");
 </script>
