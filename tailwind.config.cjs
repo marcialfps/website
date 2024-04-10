@@ -4,16 +4,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        yellow: "#c6ae59",
+        lightGrey: "#D9D9D9",
+        black: "#0F0F0F",
+        blue: "#1472FF",
+        yellow: "#C6AE59",
+        grey: "#AFAFAF",
         darkGrey: "#313131",
-        lightGrey: "#afafaf",
-        grey: "#1e1e1e",
-        yellowTransparent: "rgba(198, 174, 89, 0.2)",
-        lightGreyTransparent: "rgba(175, 175, 175, 0.2)",
+        yellowTransparent: "rgba(198, 174, 89, 0.7)",
+        greyTransparent: "rgba(175, 175, 175, 0.7)",
+        darkGreyTransparent: "rgba(49, 49, 49, 0.7)",
       },
       fontFamily: {
         sans: ["Roboto"],
-        serif: ["Oswald Variable"],
+        serif: ["Roboto Slab Variable"],
       },
     },
   },
