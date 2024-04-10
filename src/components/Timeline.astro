@@ -1,16 +1,21 @@
 ---
 export interface Props {
-  items: { title: string; subtitle: string; description?: string }[];
+  items: {
+    title: string;
+    subtitle: string;
+    date: string;
+    description?: string;
+  }[];
 }
 
 const { items } = Astro.props;
 ---
 
-<div class="flex flex-col">
+<ol class="min-w-full flex flex-col px-2.5 gap-2.5">
   {
-    items.map((item, index) => (
-      <div class="flex flex-col">
-        <div class="flex items-center">
+    items.map((item) => (
+      <li class="flex gap-2.5">
+        <div class="flex flex-col items-center pt-1.5 gap-2.5">
           <svg
             class="w-6"
             xmlns="http://www.w3.org/2000/svg"
@@ -24,25 +29,19 @@ const { items } = Astro.props;
               fill="#AFAFAF"
             />
           </svg>
-          <p class=" font-normal text-base text-yellow text-white m-0">
-            {item.title}
-          </p>
-        </div>
-        <div class="flex">
-          <div class="shrink-0 flex justify-center w-6">
-            {index !== items.length - 1 && (
-              <div class="border-s border-dotted border-lightGrey min-h-full h-12" />
-            )}
-          </div>
 
-          <p class="shrink mb-4">
-            {item.subtitle}
-            {item.description && (
-              <span class="font-light">/ {item.description}</span>
-            )}
-          </p>
+          <div class="w-0 h-full border-s border-dashed border-lightGrey " />
         </div>
-      </div>
+        <div class="flex flex-col pb-5 gap-2.5">
+          <header class="text-xl">
+            <p class="font-serif font-bold text-yellow">{item.title}</p>
+            <p>{item.subtitle}</p>
+            <p class="font-light">{item.date}</p>
+          </header>
+
+          <p>{item.description || ""}</p>
+        </div>
+      </li>
     ))
   }
-</div>
+</ol>
