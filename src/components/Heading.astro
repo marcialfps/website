@@ -1,35 +1,23 @@
 ---
-import TextSeparator from "./icons/TextSeparator.astro";
 export interface Props {
-  title: string;
-  level: 5 | 4 | 3 | 2 | 1;
-  upperCase?: boolean;
+  level: 3 | 2 | 1;
 }
 
-const { title, level, upperCase } = Astro.props;
+const { level } = Astro.props;
 ---
 
 {
-  level === 5 ? (
-    <h5 class="font-serif text-base font-light leading-10 text-white m-0">
-      {upperCase ? title.toUpperCase() : title}
-    </h5>
-  ) : level === 4 ? (
-    <h4 class="font-serif text-lg font-light leading-10 text-white m-0">
-      {upperCase ? title.toUpperCase() : title}
-    </h4>
-  ) : level === 3 ? (
-    <h3 class="font-serif text-xl font-light leading-8 text-white m-0">
-      {upperCase ? title.toUpperCase() : title}
+  level === 3 ? (
+    <h3 class="flex gap-1 items-center text-xl font-light">
+      <slot />
     </h3>
   ) : level === 2 ? (
-    <h2 class="flex justify-center items-center gap-1 font-serif text-2xl font-light text-white m-0">
-      <TextSeparator class="h-6" />
-      {upperCase ? title.toUpperCase() : title}
+    <h2 class="flex gap-1 items-center text-2xl font-semibold">
+      <slot />
     </h2>
   ) : (
-    <h1 class="font-serif text-3xl font-bold leading-10 text-yellow m-0 self-center text-center">
-      {upperCase ? title.toUpperCase() : title}
+    <h1 class="flex gap-1 items-center text-3xl">
+      <slot />
     </h1>
   )
 }
