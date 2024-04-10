@@ -1,14 +1,29 @@
 ---
+import { Image } from "astro:assets";
+
 export interface Props {
-  isCategory?: boolean;
-  content: string;
+  icon?: ImageMetadata | string;
+  text: string;
 }
 
-const { content } = Astro.props;
+const { icon, text } = Astro.props;
 ---
 
 <div
-  class="flex items-center border-yellow bg-yellowTransparent border-2 rounded-full font-bold text-xs w-fit px-2 text-yellow"
+  class="flex justify-center items-center p-1.5 gap-1.5 bg-darkGreyTransparent border border-darkGrey rounded h-8"
 >
-  <p class="m-0 whitespace-nowrap capitalize">{content}</p>
+  {
+    icon && (
+      <>
+        <Image
+          src={icon as ImageMetadata}
+          alt={`${text} icon`}
+          quality="low"
+          class="h-4 w-fit"
+        />
+        <div class="h-5 w-0 border border-lightGrey" />
+      </>
+    )
+  }
+  <p class="font-serif font-light text-white text-sm">{text}</p>
 </div>
