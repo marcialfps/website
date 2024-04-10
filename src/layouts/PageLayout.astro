@@ -11,6 +11,6 @@ const { title } = Astro.props;
 ---
 
 <BaseLayout title={`${title} - marcialfps`}>
-  <Heading level={1} title={title} />
+  <Heading level={1}>{title}</Heading>
   <slot />
 </BaseLayout>
