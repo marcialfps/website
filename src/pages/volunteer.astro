@@ -1,192 +1,102 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Separator from "../components/Separator.astro";
-import { Image } from "astro:assets";
-
 import Heading from "../components/Heading.astro";
 import Card from "../components/Card.astro";
 import Timeline from "../components/Timeline.astro";
-import Tag from "../components/Tag.astro";
 
 // Images
 import volunteerPhoto from "../assets/volunteerPhoto.png";
-import volunteerPhoto2 from "../assets/volunteerPhoto2.jpg";
 import tiaguaMadreTierra from "../assets/tiaguaMadreTierra.png";
 import afterSchool from "../assets/afterSchool.png";
-import TextSeparator from "../components/icons/TextSeparator.astro";
 
-//Icons
-import LinkedinIcon from "../components/icons/Linkedin.astro";
-import MailIcon from "../components/icons/Mail.astro";
-import TwitterIcon from "../components/icons/Twitter.astro";
-import YoutubeIcon from "../components/icons/YouTube.astro";
-import NewspaperIcon from "../components/icons/Newspaper.astro";
+// Icons
+import JobIcon from "../components/icons/Job.astro";
+import CodeIcon from "../components/icons/Code.astro";
+
+import Presentation from "../components/Presentation.astro";
+
+const socialMedia = [
+  { text: "Linkedin", href: "https://www.linkedin.com/in/marcialfps/" },
+  { text: "E-mail", href: "mailto:marcialfco@live.com" },
+];
+
+const projects = [
+  {
+    image: tiaguaMadreTierra,
+    imageAlt: "Tiagua Madre Tierra",
+    title: "Tiagua Madre Tierra documentary",
+    description:
+      "Documentary that collects stories of the people of the village of Tiagua, Lanzarote. This village was a commercial and cultural reference in the history of the island.",
+    tags: ["Documentary", "History", "Local"],
+    link: "https://www.youtube.com/watch?v=lUrMK5plLtc",
+    linkText: "Watch on Youtube",
+  },
+  {
+    image: afterSchool,
+    imageAlt: "After School logo",
+    title: "After School",
+    description:
+      "The project is carried out under the need to provide a cultural, sports and educational offer to the young people of the island of Lanzarote after the end of the school period.",
+    tags: ["Youth", "Participation and engagement"],
+    link: "https://lancelotdigital.com/ocio/llega-a-costa-teguise-la-semana-joven-after-school",
+    linkText: "Read article",
+  },
+];
 ---
 
-<BaseLayout title="Volunteering - marcialfps - Computer engineer">
-  <section
-    class="flex flex-col gap-1 lg:gap-2 lg:flex-row items-center bg-gradient-to-t lg:bg-gradient-to-l from-yellow rounded-xl p-6 lg:p-12"
+<BaseLayout>
+  <Presentation
+    image={volunteerPhoto}
+    title="Marcial F"
+    subtitle="Change agent"
+    socialLinks={socialMedia}
   >
-    <div class="flex flex-col items-center gap-4 lg:gap-6 lg:min-w-52">
-      <Image
-        src={volunteerPhoto}
-        quality="mid"
-        alt="Picture of Marcial"
-        class="z-10 size-40 lg:size-52 animate-fade-up animate-once animate-duration-[3000ms] animate-ease-in-out"
-      />
+    <p>
+      <span class="text-yellow font-serif"
+        >Volunteer in Canarian Youth Press since 2014</span
+      > and participant in multiple organizations and projects related with youth
+      and participation.
+    </p>
+    <p>📍Lanzarote, Canary Islands.</p>
+  </Presentation>
 
-      <div
-        class="flex items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
-      >
-        <a
-          class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="https://www.linkedin.com/in/marcialfps/"
-          aria-label="Linkedin profile"
-          title="Linkedin"
-        >
-          <LinkedinIcon class="size-8" />
-        </a>
-        <a
-          class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="mailto:marcialfco@live.com"
-          aria-label="Email direction"
-          title="Email"
-        >
-          <MailIcon class="size-8" />
-        </a>
-        <a
-          class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="https://twitter.com/marcialfps"
-          aria-label="Twitter profile"
-          title="Twitter/X"
-        >
-          <TwitterIcon class="size-8" />
-        </a>
-      </div>
-    </div>
+  <section class="min-w-full flex flex-col items-center gap-7">
+    <Heading level={2}><JobIcon />Experience</Heading>
 
-    <TextSeparator class="rotate-90 lg:rotate-0 h-8 lg:h-32" />
-    <div
-      class="flex flex-col shrink gap-2 font-serif animate-fade-down animate-delay-1000"
-    >
-      <div>
-        <h1 class="text-white font-bold text-4xl lg:text-7xl">Marcial F</h1>
-
-        <h2 class="text-white text-2xl lg:text-4xl font-light">Change agent</h2>
-      </div>
-
-      <p
-        class="font-sans lg:text-lg leading-6 font-normal text-white text-wrap m-0"
-      >
-        Volunteer in Canarian Youth Press since 2014 and participant in multiple
-        organizations and projects related with youth and participation.
-      </p>
-    </div>
+    <Timeline
+      items={[
+        {
+          title: "Representative and coordinator of Canarian Youth Press",
+          subtitle: "European Youth Press",
+          date: "2022 - Present",
+        },
+        {
+          title: "Technical secretary",
+          subtitle: "Canarian Youth Press NGO",
+          date: "2015 - Present",
+        },
+        {
+          title: "Jury in Galardon Joven Canarias",
+          subtitle: "Gobierno de Canarias",
+          date: "December 2020",
+        },
+        {
+          title: "Structured dialogue ambassador",
+          subtitle: "Spanish Youth Council",
+          date: "2017",
+        },
+        {
+          title: "Coordinator",
+          subtitle: "Tiagua Joven Youth Group",
+          date: "2014",
+        },
+      ]}
+    />
   </section>
 
-  <Separator />
+  <section class="flex flex-col items-center gap-7">
+    <Heading level={2}><CodeIcon />Projects</Heading>
 
-  <Image
-    class="flex-auto block object-cover lg:h-1/5 rounded-xl"
-    src={volunteerPhoto2}
-    quality="mid"
-    alt="Picture about me"
-  />
-
-  <Heading level={2} title="Volunteering" />
-  <section class="flex flex-col items-center">
-    <Card>
-      <Timeline
-        items={[
-          {
-            title: "2022 - NOW",
-            subtitle: "Representative and coordinator of Canarian Youth Press",
-            description: "European Youth Press",
-          },
-          {
-            title: "2015 - NOW",
-            subtitle: "Technical secretary",
-            description: "Canarian Youth Press NGO",
-          },
-          {
-            title: "2020",
-            subtitle: "Jury in Galardon Joven Canarias",
-            description: "Gobierno de Canarias",
-          },
-          {
-            title: "2017",
-            subtitle: "Structured dialogue ambassador",
-            description: "Spanish Youth Council",
-          },
-          {
-            title: "2014",
-            subtitle: "Coordinator",
-            description: "Tiagua Joven Youth Group",
-          },
-        ]}
-      />
-    </Card>
-  </section>
-
-  <Heading level={2} title="Projects" />
-  <section
-    class="flex flex-col flex-wrap lg:flex-row justify-center items-center gap-6"
-  >
-    <Card
-      mode="vertical"
-      image={tiaguaMadreTierra}
-      imageAlt="Tiagua Madre Tierra"
-    >
-      <Heading level={3} title="Tiagua Madre Tierra documentary" />
-
-      <p class="m-0">
-        Documentary that collects stories of the people of the village of
-        Tiagua, Lanzarote. This village was a commercial and cultural reference
-        in the history of the island.
-      </p>
-      <div class="flex justify-between">
-        <div class="flex gap-2">
-          <Tag content="Documentary" />
-          <Tag content="History" />
-          <Tag content="Local" />
-        </div>
-        <a
-          class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="https://www.youtube.com/watch?v=lUrMK5plLtc"
-          aria-label="Play in Youtube"
-          title="Play in Youtube"
-        >
-          <YoutubeIcon />
-        </a>
-      </div>
-    </Card>
-    <Card mode="vertical" image={afterSchool} imageAlt="After School logo">
-      <Heading level={3} title="After School" />
-
-      <p class="m-0">
-        The project is carried out under the need to provide a cultural, sports
-        and educational offer to the young people of the island of Lanzarote
-        after the end of the school period.
-      </p>
-      <div class="flex justify-between">
-        <div class="flex gap-2">
-          <Tag content="Youth" />
-          <Tag content="Participation and engagement" />
-        </div>
-        <a
-          class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="https://lancelotdigital.com/ocio/llega-a-costa-teguise-la-semana-joven-after-school"
-          aria-label="Read article"
-          title="Read article"
-        >
-          <NewspaperIcon />
-        </a>
-      </div>
-    </Card>
+    {projects.map((project) => <Card {...project} />)}
   </section>
 </BaseLayout>
