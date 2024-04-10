@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Separator from "../components/Separator.astro";
-import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import Card from "../components/Card.astro";
 import Timeline from "../components/Timeline.astro";
@@ -9,19 +7,16 @@ import Tag from "../components/Tag.astro";
 
 // Images
 import mainPhoto from "../assets/mainPhoto.png";
-import mainPhoto2 from "../assets/mainPhoto2.png";
-import aboutPhoto from "../assets/aboutPhoto.jpg";
 import letthebadguysrollImage from "../assets/letthebadguys.png";
 import lanzarImage from "../assets/lanzar.png";
 import endOfDegreeImage from "../assets/endOfDegreeProject.png";
 import mfpsDesign from "../assets/mfpsDesign.png";
-import TextSeparator from "../components/icons/TextSeparator.astro";
 
 // Icons
-import LinkedinIcon from "../components/icons/Linkedin.astro";
-import GithubIcon from "../components/icons/Github.astro";
-import MailIcon from "../components/icons/Mail.astro";
-import TwitterIcon from "../components/icons/Twitter.astro";
+import JobIcon from "../components/icons/Job.astro";
+import BookIcon from "../components/icons/Book.astro";
+import ToolsIcon from "../components/icons/Tools.astro";
+import CodeIcon from "../components/icons/Code.astro";
 
 import figma from "../assets/figma.svg";
 import javascript from "../assets/javascript.svg";
@@ -38,313 +33,157 @@ import express from "../assets/express.svg";
 import tailwind from "../assets/tailwind.svg";
 import aws from "../assets/aws.svg";
 
-import OpenLinkIcon from "../components/icons/OpenLink.astro";
-import PlayGameIcon from "../components/icons/PlayGame.astro";
-import CodeIcon from "../components/icons/Code.astro";
+import Presentation from "../components/Presentation.astro";
+
+const socialMedia = [
+  { text: "Linkedin", href: "https://www.linkedin.com/in/marcialfps/" },
+  { text: "GitHub", href: "https://github.com/marcialfps" },
+  { text: "E-mail", href: "mailto:marcialfco@live.com" },
+];
+
+const skills = [
+  { icon: figma, text: "Figma" },
+  { icon: javascript, text: "JavaScript" },
+  { icon: typescript, text: "TypeScript" },
+  { icon: html5, text: "HTML" },
+  { icon: css3, text: "CSS" },
+  { icon: react, text: "React" },
+  { icon: nodejs, text: "NodeJS" },
+  { icon: aws, text: "AWS" },
+  { icon: astro, text: "AstroJS" },
+  { icon: nextjs, text: "NextJS" },
+  { icon: testinglibrary, text: "Testing Library" },
+  { icon: jest, text: "Jest" },
+  { icon: express, text: "ExpressJS" },
+  { icon: tailwind, text: "TailwindCSS" },
+];
+
+const projects = [
+  {
+    image: mfpsDesign,
+    imageAlt: "MFPS designs",
+    title: "MFPS brand and website",
+    description:
+      "Personal brand and website used for professional purposes. It has been created entirely by me at Figma and used on this website. The website is implemented in AstroJS and TailwindCSS.",
+    tags: ["Figma", "Astro", "TailwindCSS"],
+    link: "https://www.figma.com/file/EwHQlcfgIMY83DHmWfNcm0/Portfolio-and-social-media-design?type=design&node-id=0%3A1&mode=design&t=lcfnIEKhboosV7XS-1",
+    linkText: "See Figma design",
+  },
+  {
+    image: letthebadguysrollImage,
+    imageAlt: "Let the bad guys roll icon",
+    title: "Let the Bad Guys Roll",
+    description:
+      "Demo game developed for the GMTK 2022 Game Jam. The planet is under the attack of the diciest army in town and it is up to you to protect it.",
+    tags: ["Game Jam", "Unity"],
+    link: "https://ulitol97.itch.io/let-the-bad-guys-roll",
+    linkText: "Play game",
+  },
+  {
+    image: endOfDegreeImage,
+    imageAlt: "Capture of the Augmented Reality app",
+    title:
+      "Assessment of preclinical learning using virtual reality based education for nursing students",
+    description:
+      "In this research, a case study is presented to analyze the use of VR technologies to learn healthcare techniques in the first year of nursing school.",
+    tags: ["Research paper", "Virtual Reality", "Unity"],
+    link: "https://www.tandfonline.com/doi/full/10.1080/09523987.2023.2324597",
+    linkText: "Read article",
+  },
+  {
+    image: lanzarImage,
+    imageAlt: "Preview of LanzAR project",
+    title: "LanzAR (Lanzarote in Augmented Reality)",
+    description:
+      "LanzAR provides a location-based experience where the user can see historical performances in augmented reality. Students participated in the recording of the historical representations.",
+    tags: ["End of degree project", "Augmented Reality", "Unity"],
+    link: "https://github.com/marcialfps/HistoricalRep_TFG",
+    linkText: "See code",
+  },
+];
 ---
 
-<BaseLayout title="marcialfps - Computer engineer">
-  <section
-    class="flex flex-col gap-1 lg:gap-2 lg:flex-row items-center bg-gradient-to-t lg:bg-gradient-to-l from-darkGrey rounded-xl p-6 lg:p-12"
+<BaseLayout>
+  <Presentation
+    image={mainPhoto}
+    title="Marcial F"
+    subtitle="Computer engineer"
+    socialLinks={socialMedia}
   >
-    <div class="flex flex-col items-center gap-4 lg:gap-6 lg:min-w-52">
-      <div class="relative">
-        <Image
-          src={mainPhoto2}
-          quality="mid"
-          alt="Picture of Marcial"
-          class="absolute size-40 lg:size-52 animate-fade-up animate-twice animate-ease-in-out animate-duration-[3000ms] animate-alternate"
-        />
-        <Image
-          src={mainPhoto}
-          quality="mid"
-          alt="Picture of Marcial"
-          class="z-10 size-40 lg:size-52 animate-fade-up animate-once animate-delay-[5000ms] animate-duration-[3000ms] animate-ease-in-out"
-        />
-      </div>
+    <p>
+      +4 years of experience as <span class="text-yellow font-serif"
+        >full-stack engineer</span
+      >. Experience in <span class="text-yellow font-serif"
+        >designing, developing, and maintaining web applications and user
+        interfaces</span
+      >. Ability to work across the entire development lifecycle, from UI/UX
+      design to deployment and integration with CI/CD pipelines.
+    </p>
+    <p>📍Lanzarote, Canary Islands.</p>
+  </Presentation>
 
-      <div
-        class="flex items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
-      >
-        <a
-          class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="https://www.linkedin.com/in/marcialfps/"
-          aria-label="Linkedin profile"
-          title="Linkedin"
-        >
-          <LinkedinIcon class="size-8" />
-        </a>
-        <a
-          class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="https://github.com/marcialfps"
-          aria-label="GitHub account"
-          title="GitHub"
-        >
-          <GithubIcon class="size-8" />
-        </a>
-        <a
-          class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="mailto:marcialfco@live.com"
-          aria-label="Email direction"
-          title="Email"
-        >
-          <MailIcon class="size-8" />
-        </a>
-        <a
-          class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="https://twitter.com/marcialfps"
-          aria-label="Twitter profile"
-          title="Twitter/X"
-        >
-          <TwitterIcon class="size-8" />
-        </a>
-      </div>
-    </div>
-    <TextSeparator class="rotate-90 lg:rotate-0 h-8 lg:h-32" />
-    <div
-      class="flex flex-col shrink gap-2 font-serif animate-fade-down animate-delay-1000"
-    >
-      <p class="text-lg lg:text-xl font-light leading-8 text-white m-0">
-        Hi there 👋🏽
-      </p>
+  <section class="flex flex-col items-center gap-7">
+    <Heading level={2}><JobIcon />Professional experience</Heading>
 
-      <div>
-        <h1 class="text-yellow font-bold text-4xl lg:text-7xl">Marcial F</h1>
+    <Timeline
+      items={[
+        {
+          title: "Associate Professional Product Developer",
+          subtitle: "DXC Technology, Avilés, Spain",
+          date: "March 2020 - Present",
+          description:
+            "Creating user-friendly interfaces (Adobe XD, Figma) and building web applications (React, TypeScript). Development and maintenance of Node.js APIs. Testing strategy leveraging Jest for unit testing, React Testing Library for component testing, and Cypress for end-to-end testing. Streamlining AWS deployments with Terraform and automating CI/CD processes with Jenkins.",
+        },
+        {
+          title: "Software engineer",
+          subtitle: "Capgemini, Langreo, Spain",
+          date: "February 2019 - April 2019 and September 2019 - March 2020",
+          description:
+            "Build and maintain software solutions using Java and perform efficient database maintenance with PL/SQL. Adept at troubleshooting, debugging, and optimizing code for performance and functionality.",
+        },
+      ]}
+    />
+  </section>
 
-        <h2 class="text-lightGrey text-2xl lg:text-4xl font-light">
-          Computer engineer
-        </h2>
-      </div>
+  <section class="min-w-full flex flex-col items-center gap-5">
+    <Heading level={2}><BookIcon />Education and certifications</Heading>
 
-      <p
-        class="font-sans lg:text-lg leading-6 font-normal text-white text-wrap m-0"
-      >
-        Full stack developer and analyst. Development of web applications in
-        JavaScript and TypeScript with NextJS and Astro. REST APIs in Express
-        with NodeJS. Deployment in AWS services.
-      </p>
+    <Timeline
+      items={[
+        {
+          title: "Oxford Test of English",
+          subtitle: "B2 CEFR level",
+          date: "May 2023",
+        },
+        {
+          title: "AWS Solutions Architect",
+          subtitle: "Associate",
+          date: "February 2023 - February 2026",
+        },
+        {
+          title: "Master in Web Engineering",
+          subtitle: "University of Oviedo, Spain",
+          date: "September 2019 - June 2021",
+        },
+        {
+          title: "Grade in Software Engineering",
+          subtitle: "University of Oviedo, Spain",
+          date: "September 2015 - July 2019",
+        },
+      ]}
+    />
+  </section>
+
+  <section class="flex flex-col items-center gap-7">
+    <Heading level={2}><ToolsIcon />Technical skills</Heading>
+    <div class="flex justify-center gap-4 flex-wrap">
+      {skills.map((skill) => <Tag {...skill} />)}
     </div>
   </section>
 
-  <Separator />
+  <section class="flex flex-col items-center gap-7">
+    <Heading level={2}><CodeIcon />Projects</Heading>
 
-  <Image
-    class="flex-auto block object-cover lg:h-1/5 rounded-xl"
-    quality="mid"
-    src={aboutPhoto}
-    alt="Picture about me"
-  />
-
-  <Heading level={2} title="Education and professional experience" />
-  <section class="flex flex-wrap lg:flex-row justify-center items-center gap-6">
-    <Card>
-      <Timeline
-        items={[
-          {
-            title: "2023",
-            subtitle: "AWS Associate Solutions Architect",
-          },
-          {
-            title: "2019 - 2021",
-            subtitle: "Master in Web engineering",
-            description: "University of Oviedo, Spain",
-          },
-          {
-            title: "2015 - 2019",
-            subtitle: "Degree in Software engineering",
-            description: "University of Oviedo, Spain",
-          },
-        ]}
-      />
-    </Card>
-    <Card>
-      <Timeline
-        items={[
-          {
-            title: "MARCH 2020 - NOW",
-            subtitle: "Associate Professional Product Developer",
-            description: "DXC Technology, Avilés, Spain",
-          },
-          {
-            title: "SEPT 2019 - MARCH 2020",
-            subtitle: "Software engineer",
-            description: "Capgemini, Langreo, Spain",
-          },
-        ]}
-      />
-    </Card>
+    {projects.map((project) => <Card {...project} />)}
   </section>
-
-  <Heading level={2} title="Projects" />
-  <section
-    class="flex flex-col flex-wrap lg:flex-row justify-center items-center gap-6"
-  >
-    <Card mode="vertical" image={mfpsDesign} imageAlt="MFPS designs">
-      <Heading level={3} title="MFPS brand and website" />
-
-      <p class="m-0">
-        Personal brand and website used for professional purposes. It has been
-        created entirely by me at Figma and used on this website. The website is
-        implemented in AstroJS and TailwindCSS.
-      </p>
-      <div class="flex justify-between">
-        <div class="flex gap-2">
-          <Tag isCategory content="Figma" />
-          <Tag isCategory content="Astro" />
-          <Tag isCategory content="TailwindCSS" />
-        </div>
-        <a
-          class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="https://www.figma.com/file/EwHQlcfgIMY83DHmWfNcm0/Portfolio-and-social-media-design?type=design&node-id=0%3A1&mode=design&t=lcfnIEKhboosV7XS-1"
-          aria-label="Open Figma design"
-          title="Open Figma design"
-        >
-          <OpenLinkIcon />
-        </a>
-      </div>
-    </Card>
-    <Card
-      mode="vertical"
-      image={letthebadguysrollImage}
-      imageAlt="Let the bad guys roll icon"
-    >
-      <Heading level={3} title="Let the Bad Guys Roll" />
-
-      <p class="m-0">
-        Demo game developed for the GMTK 2022 Game Jam. The planet is under the
-        attack of the diciest army in town and it is up to you to protect it.
-      </p>
-      <div class="flex justify-between">
-        <div class="flex gap-2">
-          <Tag isCategory content="Game Jam" />
-          <Tag isCategory content="Unity" />
-        </div>
-        <a
-          class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="https://ulitol97.itch.io/let-the-bad-guys-roll"
-          aria-label="Open game page"
-          title="Open game"
-        >
-          <PlayGameIcon />
-        </a>
-      </div>
-    </Card>
-    <Card
-      mode="vertical"
-      image={endOfDegreeImage}
-      imageAlt="Capture of the Augmented Reality app"
-    >
-      <Heading
-        level={3}
-        title="Assessment of preclinical learning using virtual reality based education for nursing students"
-      />
-
-      <p class="flex-1 min-h-0 m-0 text-ellipsis">
-        In this research, a case study is presented to analyze the use of VR
-        technologies to learn healthcare techniques in the first year of nursing
-        school.
-      </p>
-      <div class="flex justify-between">
-        <div class="flex gap-2">
-          <Tag isCategory content="Research paper" />
-          <Tag isCategory content="VR" />
-          <Tag isCategory content="Unity" />
-        </div>
-        <a
-          aria-label="Read paper"
-          title="Read paper"
-          class="no-underline text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="https://www.researchgate.net/publication/370289016_Assessment_of_preclinical_learning_using_virtual_reality_based_education_for_nursing_students"
-        >
-          <OpenLinkIcon />
-        </a>
-      </div>
-    </Card>
-    <Card mode="vertical" image={lanzarImage} imageAlt="Icon of LanzAR project">
-      <Heading level={3} title="LanzAR (Lanzarote in Augmented Reality)" />
-
-      <p class="m-0">
-        LanzAR provides a location-based experience where the user can see
-        historical performances in augmented reality. Students participated in
-        the recording of the historical representations.
-      </p>
-      <div class="flex justify-between">
-        <div class="flex gap-2">
-          <Tag isCategory content="End of degree project" />
-          <Tag isCategory content="AR" />
-          <Tag isCategory content="Unity" />
-        </div>
-        <a
-          aria-label="See code"
-          title="See code"
-          class="no-underline transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-yellow focus:text-yellow"
-          target="_blank"
-          href="https://github.com/marcialfps/HistoricalRep_TFG"
-        >
-          <CodeIcon />
-        </a>
-      </div>
-    </Card>
-  </section>
-
-  <Heading level={2} title="Tech stack" />
-  <section class="flex justify-center gap-4 flex-wrap">
-    <div
-      class="lg:w-fit flex flex-wrap items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
-    >
-      <Heading level={3} title="Design" />
-      <Image src={figma} alt="Figma" quality="low" />
-    </div>
-    <div
-      class="lg:w-fit flex flex-wrap items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
-    >
-      <Heading level={3} title="Languages" />
-      <Image src={javascript} alt="JavaScript" quality="low" />
-      <Image src={typescript} alt="TypeScript" quality="low" />
-      <Image src={html5} alt="HTML5" quality="low" />
-      <Image src={css3} alt="CSS" quality="low" />
-    </div>
-    <div
-      class="lg:w-fit flex flex-wrap items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
-    >
-      <Heading level={3} title="Libraries" />
-      <Image src={react} alt="ReactJS" quality="low" />
-      <Image src={nodejs} alt="NodeJS" quality="low" />
-    </div>
-    <div
-      class="lg:w-fit flex flex-wrap items-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
-    >
-      <Heading level={3} title="Architecture" />
-      <Image src={aws} alt="Amazon Web Services" quality="low" />
-    </div>
-    <div
-      class="lg:w-fit flex flex-wrap items-center justify-center gap-3 py-2 px-4 rounded-xl border border-darkGrey hover:border-grey"
-    >
-      <Heading level={3} title="Frameworks" />
-      <Image src={astro} alt="Astro" quality="low" />
-      <Image src={nextjs} alt="NextJS" quality="low" />
-      <Image src={testinglibrary} alt="Testing Library" quality="low" />
-      <Image src={jest} alt="Jest" quality="low" />
-      <Image src={express} alt="ExpressJS" quality="low" />
-      <Image src={tailwind} alt="TailwindCSS" quality="low" />
-    </div>
-  </section>
-
-  <p class="font-sans text-base text-white lg:self-end">
-    Want to know more? <a
-      class="underline hover:text-yellow focus:text-yellow"
-      target="_blank"
-      href="mailto:marcialfco@live.com"
-    >
-      Contact me</a
-    >{" "}
-    📧
-  </p>
 </BaseLayout>

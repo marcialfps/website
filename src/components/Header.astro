@@ -1,0 +1,46 @@
+---
+import LogoLetters from "./icons/LogoLetters.astro";
+import HomeIcon from "./icons/Home.astro";
+import VolunteerIcon from "./icons/Volunteer.astro";
+---
+
+<header class="flex justify-center h-10 border-b border-lightGrey">
+  <div
+    class="grow flex items-center justify-between px-2.5 lg:p-0 lg:max-w-screen-md"
+  >
+    <a
+      class="no-underline text-lightGrey h-4 hover:text-yellow hover:scale-105 duration-300 focus:text-yellow"
+      href="/"
+      aria-label="Go to home page"
+    >
+      <LogoLetters />
+    </a>
+
+    <nav class="flex gap-5 text-sm lg:text-base">
+      <a
+        class="flex gap-1 no-underline hover:text-yellow hover:scale-105 duration-300 focus:text-yellow"
+        href="/"
+        aria-label="Home page"
+        id="home"
+      >
+        <HomeIcon class="h-5" />
+        Home
+      </a>
+      <a
+        class="flex gap-1 no-underline hover:text-yellow hover:scale-105 duration-300 focus:text-yellow"
+        href="/volunteer"
+        aria-label="Volunteering page"
+        id="volunteer"
+      >
+        <VolunteerIcon class="h-5" />
+        Volunteering
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const currentPathname = window.location.pathname.replace("/", "") || "home";
+  const anchor = document.getElementById(currentPathname);
+  anchor?.classList.add("text-yellow");
+</script>

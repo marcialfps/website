@@ -1,10 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Message from "../components/Message.astro";
+import Heading from "../components/Heading.astro";
 ---
 
-<BaseLayout title="Not found - marcialfps - Computer engineer">
-  <Message>
-    <p class="m-0">What are you looking for? 🤔</p>
-  </Message>
+<BaseLayout>
+  <Heading level={1}>Oops!!</Heading>
+  <Heading level={2}>What are you looking for? </Heading>
 </BaseLayout>
