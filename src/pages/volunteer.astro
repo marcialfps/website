@@ -11,7 +11,7 @@ import afterSchool from "../assets/afterSchool.png";
 
 // Icons
 import JobIcon from "../components/icons/Job.astro";
-import CodeIcon from "../components/icons/Code.astro";
+import NotebookIcon from "../components/Notebook.astro";
 
 import Presentation from "../components/Presentation.astro";
 
@@ -95,7 +95,7 @@ const projects = [
   </section>
 
   <section class="flex flex-col items-center gap-7">
-    <Heading level={2}><CodeIcon />Projects</Heading>
+    <Heading level={2}><NotebookIcon />Projects</Heading>
 
     {projects.map((project) => <Card {...project} />)}
   </section>
