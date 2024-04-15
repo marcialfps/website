@@ -1,6 +1,6 @@
 ---
 import LogoLetters from "./icons/LogoLetters.astro";
-import HomeIcon from "./icons/Home.astro";
+import ComputerIcon from "./icons/Computer.astro";
 import VolunteerIcon from "./icons/Volunteer.astro";
 ---
 
@@ -18,22 +18,22 @@ import VolunteerIcon from "./icons/Volunteer.astro";
 
     <nav class="flex gap-5 text-sm lg:text-base">
       <a
-        class="flex gap-1 no-underline hover:text-yellow hover:scale-105 duration-300 focus:text-yellow"
+        class="flex items-center gap-1 no-underline hover:text-yellow hover:scale-105 duration-300 focus:text-yellow"
         href="/"
         aria-label="Home page"
         id="home"
       >
-        <HomeIcon class="h-5" />
-        Home
+        <ComputerIcon class="h-5" />
+        Engineer
       </a>
       <a
-        class="flex gap-1 no-underline hover:text-yellow hover:scale-105 duration-300 focus:text-yellow"
+        class="flex items-center gap-1 no-underline hover:text-yellow hover:scale-105 duration-300 focus:text-yellow"
         href="/volunteer"
         aria-label="Volunteering page"
         id="volunteer"
       >
         <VolunteerIcon class="h-5" />
-        Volunteering
+        Volunteer
       </a>
     </nav>
   </div>
