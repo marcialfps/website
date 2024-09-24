@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+
+export interface Props {
+  label?: string;
+  icon?: ImageMetadata | string;
+  mode?: "primary" | "secondary";
+  onClick?: () => void;
+  href?: string;
+}
+
+const { label, icon, mode, onClick, href } = Astro.props;
+---
+
+<button
+  class:list={[
+    "flex justify-center items-center p-1.5 gap-1.5 border rounded h-8 font-serif text-white text-sm",
+    { "border-yellow bg-yellowTransparent": !mode || mode === "primary" },
+    { "border-grey bg-greyTransparent": mode === "secondary" },
+  ]}
+  type="button"
+  onclick=""
+  aria-label={label}
+>
+  {
+    icon && (
+      <Image
+        src={icon as ImageMetadata}
+        alt={`${label} icon`}
+        quality="low"
+        class="h-4 w-fit fill-slate-50"
+      />
+    )
+  }
+  {label}
+</button>
