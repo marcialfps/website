@@ -8,6 +8,7 @@ import Timeline from "../components/Timeline.astro";
 import volunteerPhoto from "../assets/volunteerPhoto.png";
 import tiaguaMadreTierra from "../assets/tiaguaMadreTierra.png";
 import afterSchool from "../assets/afterSchool.png";
+import VoNG from "../assets/VoNG.png";
 
 // Icons
 import JobIcon from "../components/icons/Job.astro";
@@ -21,6 +22,16 @@ const socialMedia = [
 ];
 
 const projects = [
+  {
+    image: VoNG,
+    imageAlt: "Voices of the Next Generation website",
+    title: "Voices of the Next Generation",
+    description:
+      '"Voices of the Next Generation: Future Decision-Makers on European Values and Citizenship" is a youth-led project which aims to reinforce cooperation between youth organisations to boost active citizenship and participation in democratic processes by supporting youth development and empowering them to become active members of the European Community. Responsible for the design and development of the website.',
+    tags: ["Web Design", "Webflow", "SEO"],
+    link: "https://www.voicesofthenextgeneration.eu/",
+    linkText: "Visit website",
+  },
   {
     image: afterSchool,
     imageAlt: "After School logo",
@@ -52,8 +63,10 @@ const projects = [
     socialLinks={socialMedia}
   >
     <p class="text-center">
-      <span class="text-yellow font-serif">Volunteer in Canarian Youth Press since 2014</span> and participant
-      in multiple organizations and projects related with youth and participation.
+      <span class="text-yellow font-serif"
+        >Volunteer in Canarian Youth Press since 2014</span
+      > and participant in multiple organizations and projects related with youth
+      and participation.
     </p>
     <p>📍Lanzarote, Canary Islands.</p>
   </Presentation>
@@ -64,9 +77,14 @@ const projects = [
     <Timeline
       items={[
         {
+          title: "Executive Board member",
+          subtitle: "European Youth Press",
+          date: "November 2024 - Present",
+        },
+        {
           title: "Representative and coordinator of Canarian Youth Press",
           subtitle: "European Youth Press",
-          date: "2022 - Present",
+          date: "2022 - 2024",
         },
         {
           title: "Technical secretary",
