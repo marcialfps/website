@@ -1,16 +1,24 @@
-# Astro Starter Kit: Basics
+# Personal Website - Marcial F
 
-```
-npm create astro@latest -- --template basics
-```
+## What is this project?
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+This is my personal portfolio website showcasing my professional experience as a full-stack engineer, volunteer work with European Youth Press, education, technical skills, and projects. The site serves as a digital resume and portfolio to present my work in software development, web design, and community engagement.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Technologies
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+- **Astro** - Static site generator for fast, content-focused websites
+- **TailwindCSS** - Utility-first CSS framework for styling
+- **GitHub Actions** - CI/CD pipeline for automated deployments
+- **AWS** - Cloud hosting infrastructure
+
+## Why Astro?
+
+Astro was chosen for this project because:
+- **Performance-first**: Ships zero JavaScript by default, resulting in faster page loads
+- **Content-focused**: Perfect for portfolio and blog content
+- **Component flexibility**: Supports multiple frameworks and allows using `.astro` components
+- **Built-in optimizations**: Automatic image optimization and asset handling
+- **Developer experience**: Simple, intuitive syntax with excellent TypeScript support
 
 
 ## 🚀 Project Structure
@@ -49,8 +57,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying     |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-# website
