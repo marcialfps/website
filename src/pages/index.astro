@@ -11,6 +11,7 @@ import letthebadguysrollImage from "../assets/letthebadguys.png";
 import lanzarImage from "../assets/lanzar.png";
 import endOfDegreeImage from "../assets/endOfDegreeProject.png";
 import mfpsDesign from "../assets/mfpsDesign.png";
+import VoNG from "../assets/VoNG.png";
 
 // Icons
 import JobIcon from "../components/icons/Job.astro";
@@ -57,6 +58,16 @@ const skills = [
 ];
 
 const projects = [
+  {
+    image: VoNG,
+    imageAlt: "Voices of the Next Generation website",
+    title: "Voices of the Next Generation",
+    description:
+      '"Voices of the Next Generation: Future Decision-Makers on European Values and Citizenship" is a youth-led project which aims to reinforce cooperation between youth organisations to boost active citizenship and participation in democratic processes by supporting youth development and empowering them to become active members of the European Community. Responsible for the design and development of the website.',
+    tags: ["Web Design", "Webflow", "SEO"],
+    link: "https://www.voicesofthenextgeneration.eu/",
+    linkText: "Visit website",
+  },
   {
     image: mfpsDesign,
     imageAlt: "MFPS designs",
@@ -109,11 +120,13 @@ const projects = [
     socialLinks={socialMedia}
   >
     <p class="text-center">
-      +4 years of experience as <span class="text-yellow font-serif">full-stack engineer</span>.
-      Experience in <span class="text-yellow font-serif"
-        >designing, developing, and maintaining web applications and user interfaces</span
-      >. Ability to work across the entire development lifecycle, from UI/UX design to deployment
-      and integration with CI/CD pipelines.
+      +4 years of experience as <span class="text-yellow font-serif"
+        >full-stack engineer</span
+      >. Experience in <span class="text-yellow font-serif"
+        >designing, developing, and maintaining web applications and user
+        interfaces</span
+      >. Ability to work across the entire development lifecycle, from UI/UX
+      design to deployment and integration with CI/CD pipelines.
     </p>
     <p>📍Lanzarote, Canary Islands.</p>
   </Presentation>
