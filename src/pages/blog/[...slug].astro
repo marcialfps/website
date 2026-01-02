@@ -1,8 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "../../layouts/PageLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import Prose from "../../components/Prose.astro";
 import Tag from "../../components/Tag.astro";
+import Heading from "../../components/Heading.astro";
+import StructuredData from "../../components/StructuredData.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
@@ -14,9 +17,29 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const articleData = {
+  headline: entry.data.title,
+  description: entry.data.description,
+  image: entry.data.image.url,
+  datePublished: entry.data.pubDate.toISOString(),
+  author: entry.data.author,
+  keywords: entry.data.tags,
+};
 ---
 
-<PageLayout title={entry.data.title}>
+<BaseLayout
+  title={`${entry.data.title} - marcialfps`}
+  description={entry.data.description}
+  image={entry.data.image.url}
+  imageAlt={entry.data.image.alt}
+  article={true}
+  publishedTime={entry.data.pubDate.toISOString()}
+  author={entry.data.author}
+  tags={entry.data.tags}
+>
+  <StructuredData type="article" articleData={articleData} />
+  <Heading level={1}>{entry.data.title}</Heading>
   <article>
     <div class="flex flex-col items-center gap-3">
       <p class="text-base text-white">
@@ -35,4 +58,4 @@ const { Content } = await entry.render();
       </Prose>
     </section>
   </article>
-</PageLayout>
+</BaseLayout>
