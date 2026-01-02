@@ -1,0 +1,99 @@
+---
+export interface Props {
+  type?: "person" | "article" | "website";
+  articleData?: {
+    headline: string;
+    description: string;
+    image: string;
+    datePublished: string;
+    dateModified?: string;
+    author: string;
+    keywords?: string[];
+  };
+}
+
+const { type = "person", articleData } = Astro.props;
+
+const siteURL = Astro.site || "https://marcialfps.es";
+
+// Person/Portfolio Schema (default)
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Marcial F",
+  url: siteURL.toString(),
+  image: new URL("/icons/main.png", siteURL).href,
+  jobTitle: "Computer Engineer",
+  description:
+    "Computer engineer and change agent with +4 years of experience as full-stack engineer",
+  knowsAbout: [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "AWS",
+    "Full-Stack Development",
+    "Web Development",
+  ],
+  sameAs: [
+    "https://www.linkedin.com/in/marcialfps/",
+    "https://github.com/marcialfps",
+  ],
+};
+
+// Website Schema
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "marcialfps",
+  url: siteURL.toString(),
+  description:
+    "Marcial F, computer engineer and change agent. +4 years of experience as full-stack engineer.",
+  author: {
+    "@type": "Person",
+    name: "Marcial F",
+  },
+};
+
+// Article Schema
+const articleSchema = articleData
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: articleData.headline,
+      description: articleData.description,
+      image: new URL(articleData.image, siteURL).href,
+      datePublished: articleData.datePublished,
+      dateModified: articleData.dateModified || articleData.datePublished,
+      author: {
+        "@type": "Person",
+        name: articleData.author,
+        url: siteURL.toString(),
+      },
+      publisher: {
+        "@type": "Person",
+        name: "Marcial F",
+        logo: {
+          "@type": "ImageObject",
+          url: new URL("/icons/logo.svg", siteURL).href,
+        },
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": new URL(Astro.url.pathname, siteURL).href,
+      },
+      ...(articleData.keywords && {
+        keywords: articleData.keywords.join(", "),
+      }),
+    }
+  : null;
+
+const schema =
+  type === "article" && articleSchema
+    ? articleSchema
+    : type === "website"
+      ? websiteSchema
+      : personSchema;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,6 +1,9 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import SEO from "../components/SEO.astro";
+import Analytics from "../components/Analytics.astro";
+import StructuredData from "../components/StructuredData.astro";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/700.css";
@@ -8,28 +11,55 @@ import "@fontsource-variable/roboto-slab";
 
 export interface Props {
   title?: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+  article?: boolean;
+  publishedTime?: string;
+  author?: string;
+  tags?: string[];
+  canonicalURL?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description,
+  image,
+  imageAlt,
+  article,
+  publishedTime,
+  author,
+  tags,
+  canonicalURL,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/icons/logo.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Marcial F, computer engineer and change agent. +4 years of experience as full-stack engineer."
+
+    <!-- SEO Meta Tags -->
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      imageAlt={imageAlt}
+      article={article}
+      publishedTime={publishedTime}
+      author={author}
+      tags={tags}
+      canonicalURL={canonicalURL}
     />
 
-    <meta property="og:image" content="/icons/main.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="500" />
-    <meta property="og:image:height" content="500" />
-    <title>{title ?? "marcialfps - Computer engineer"}</title>
+    <!-- Structured Data -->
+    <StructuredData type={article ? "article" : "person"} />
+
+    <!-- Analytics -->
+    <Analytics />
   </head>
   <body class="flex flex-col gap-2 lg:gap-5 min-h-screen text-white">
     <Header />
@@ -38,8 +68,7 @@ const { title } = Astro.props;
     >
       <slot />
     </main>
-  </body>
-  <Footer />
+  </body><Footer />
 </html>
 <style is:global>
   :root {

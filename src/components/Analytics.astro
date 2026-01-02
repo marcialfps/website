@@ -1,0 +1,105 @@
+---
+// Google Analytics 4 - Replace with your Measurement ID
+const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+
+// Only load analytics in production
+const isProduction = import.meta.env.PROD;
+---
+
+{isProduction && GA_MEASUREMENT_ID && (
+  <>
+    <!-- Google tag (gtag.js) -->
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+    <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID, {
+        page_path: window.location.pathname,
+      });
+    </script>
+  </>
+)}
+
+<!-- Cookie consent banner - you can customize this -->
+{isProduction && GA_MEASUREMENT_ID && (
+  <style is:global>
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 15, 15, 0.95);
+      border-top: 1px solid #313131;
+      padding: 1rem;
+      z-index: 1000;
+      display: none;
+    }
+    .cookie-banner.show {
+      display: block;
+    }
+    .cookie-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .cookie-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .cookie-btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .cookie-accept {
+      background: #fbbf24;
+      color: #0f0f0f;
+    }
+    .cookie-decline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+  </style>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+      <p style="margin: 0; color: #fff; font-size: 0.9rem;">
+        This website uses cookies to enhance your experience and analyze traffic.
+      </p>
+      <div class="cookie-buttons">
+        <button class="cookie-btn cookie-accept" id="acceptCookies">Accept</button>
+        <button class="cookie-btn cookie-decline" id="declineCookies">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    // Check if user has already made a choice
+    const cookieConsent = localStorage.getItem('cookieConsent');
+    const banner = document.getElementById('cookieBanner');
+    
+    if (!cookieConsent) {
+      banner.classList.add('show');
+    }
+
+    document.getElementById('acceptCookies')?.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'accepted');
+      banner.classList.remove('show');
+    });
+
+    document.getElementById('declineCookies')?.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'declined');
+      banner.classList.remove('show');
+      // Disable GA tracking
+      window['ga-disable-' + document.currentScript.dataset.gaId] = true;
+    });
+  </script>
+)}

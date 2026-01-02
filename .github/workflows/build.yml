@@ -7,6 +7,7 @@ jobs:
   build:
     env:
       S3_BUCKET: ${{ secrets.S3_BUCKET }}
+      PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
     runs-on: ubuntu-latest
 
     steps:
