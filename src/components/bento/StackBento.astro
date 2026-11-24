@@ -1,0 +1,52 @@
+---
+import BentoCard from "./BentoCard.astro";
+import SectionHeader from "./SectionHeader.astro";
+import type { SkillGroup } from "../../data/portfolio";
+
+export interface Props {
+  skillGroups: SkillGroup[];
+}
+
+const { skillGroups } = Astro.props;
+---
+
+<section
+  id="stack"
+  class="lg:col-span-12 scroll-mt-20 flex flex-col gap-4"
+  aria-labelledby="stack-heading"
+>
+  <SectionHeader
+    id="stack-heading"
+    title="Technical Stack & Tooling"
+    meta="Production-tested"
+  />
+
+  <BentoCard as="div" class="flex flex-col gap-5">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {
+        skillGroups.map((group) => (
+          <div class="flex flex-col gap-3">
+            <h3 class="font-mono text-xs font-medium text-zinc-300 border-b border-white/10 pb-2">
+              {group.category}
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {group.items.map((skill) => (
+                <div class="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs text-zinc-200 transition-colors duration-200 hover:border-white/25 hover:bg-white/[0.06]">
+                  <img
+                    src={skill.icon}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-3.5 w-3.5 shrink-0 object-contain"
+                  />
+                  <span class="font-mono text-[11px]">{skill.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </BentoCard>
+</section>

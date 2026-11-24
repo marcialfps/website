@@ -1,0 +1,22 @@
+---
+export interface Props {
+  id: string;
+  title: string;
+  meta?: string;
+}
+
+const { id, title, meta } = Astro.props;
+---
+
+<div class="flex items-center justify-between px-1">
+  <div class="flex items-center gap-2.5">
+    <span class="h-1.5 w-1.5 rounded-full bg-yellow" aria-hidden="true"></span>
+    <h2
+      id={id}
+      class="font-mono text-xs uppercase tracking-widest text-zinc-400"
+    >
+      {title}
+    </h2>
+  </div>
+  {meta && <span class="font-mono text-xs text-zinc-500">{meta}</span>}
+</div>
