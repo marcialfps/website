@@ -10,7 +10,6 @@ import mainPhoto from "../assets/mainPhoto.png";
 import letthebadguysrollImage from "../assets/letthebadguys.png";
 import lanzarImage from "../assets/lanzar.png";
 import endOfDegreeImage from "../assets/endOfDegreeProject.png";
-import mfpsDesign from "../assets/mfpsDesign.png";
 import VoNG from "../assets/VoNG.png";
 
 // Icons
@@ -42,22 +41,55 @@ const socialMedia = [
 ];
 
 const skills = [
-  { icon: figma, text: "Figma" },
-  { icon: javascript, text: "JavaScript" },
   { icon: typescript, text: "TypeScript" },
+  { icon: javascript, text: "JavaScript" },
+  { text: "Java" },
+  { text: "Python" },
+  { text: "Oracle PL/SQL" },
   { icon: react, text: "React" },
-  { icon: nodejs, text: "NodeJS" },
+  { text: "Angular" },
+  { icon: nodejs, text: "Node.js" },
+  { icon: express, text: "Express.js" },
+  { text: "Spring Boot" },
+  { text: "Webflow" },
   { icon: aws, text: "AWS" },
+  { text: "DynamoDB" },
   { icon: terraform, text: "Terraform" },
+  { text: "Claude Code" },
+  { text: "GitHub Copilot" },
+  { text: "Git" },
+  { text: "Jenkins" },
+  { text: "GitHub Actions" },
+  { icon: jest, text: "Jest" },
+  { icon: testinglibrary, text: "React Testing Library" },
+  { text: "Cypress" },
+  { text: "Storybook" },
+  { text: "Scrum" },
+  { text: "Kanban" },
+  { text: "CI/CD" },
   { icon: astro, text: "AstroJS" },
   { icon: nextjs, text: "NextJS" },
-  { icon: testinglibrary, text: "Testing Library" },
-  { icon: jest, text: "Jest" },
-  { icon: express, text: "ExpressJS" },
   { icon: tailwind, text: "TailwindCSS" },
+  { icon: figma, text: "Figma" },
 ];
 
 const projects = [
+  {
+    title: "Halstack Design System",
+    description:
+      "Accessible, high-performance open-source React and Angular component library featuring hypermedia API (HAL) integration, interactive documentation in Storybook, and automated unit and E2E testing with Jest, React Testing Library, and Cypress; adopted across 20+ internal teams and multiple international insurance SaaS projects.",
+    tags: ["React", "TypeScript", "Storybook", "Jest", "Cypress"],
+    link: "https://github.com/dxc-technology/halstack-react",
+    linkText: "See on GitHub",
+  },
+  {
+    title: "European Youth Press website",
+    description:
+      "Technical restructuring and comprehensive SEO optimization of the main institutional website using JavaScript, Webflow, and CSS, increasing organic web traffic by 45% (1,000+ monthly visits) and driving 10+ new European partnerships.",
+    tags: ["JavaScript", "Webflow", "CSS", "SEO"],
+    link: "https://www.youthpress.org/",
+    linkText: "Visit website",
+  },
   {
     image: VoNG,
     imageAlt: "Voices of the Next Generation website",
@@ -67,16 +99,6 @@ const projects = [
     tags: ["Web Design", "Webflow", "SEO"],
     link: "https://www.voicesofthenextgeneration.eu/",
     linkText: "Visit website",
-  },
-  {
-    image: mfpsDesign,
-    imageAlt: "MFPS designs",
-    title: "MFPS brand and website",
-    description:
-      "Personal brand and website used for professional purposes. It has been created entirely by me at Figma and used on this website. The website is implemented in AstroJS and TailwindCSS.",
-    tags: ["Figma", "Astro", "TailwindCSS"],
-    link: "https://www.figma.com/file/EwHQlcfgIMY83DHmWfNcm0/Portfolio-and-social-media-design?type=design&node-id=0%3A1&mode=design&t=lcfnIEKhboosV7XS-1",
-    linkText: "See Figma design",
   },
   {
     image: letthebadguysrollImage,
@@ -116,19 +138,20 @@ const projects = [
   <Presentation
     image={mainPhoto}
     title="Marcial F"
-    subtitle="Computer engineer"
+    subtitle="Full-Stack & Cloud Engineer"
     socialLinks={socialMedia}
   >
     <p class="text-center">
-      +4 years of experience as <span class="text-yellow font-serif"
-        >full-stack engineer</span
-      >. Experience in <span class="text-yellow font-serif"
-        >designing, developing, and maintaining web applications and user
-        interfaces</span
-      >. Ability to work across the entire development lifecycle, from UI/UX
-      design to deployment and integration with CI/CD pipelines.
+      <span class="text-yellow font-serif"
+        >Full-Stack &amp; Cloud Engineer</span
+      > with over 6 years of experience at DXC Technology and Capgemini, specializing
+      in <span class="text-yellow font-serif"
+        >scalable cloud architectures and modern web development</span
+      > for the insurance and banking sectors. Proven track record of building serverless
+      microservices on AWS that power enterprise insurance SaaS products, alongside
+      accessible design systems using React and Terraform.
     </p>
-    <p>📍Lanzarote, Canary Islands.</p>
+    <p>📍Lanzarote, Canary Islands (Spain).</p>
   </Presentation>
 
   <section class="flex flex-col items-center gap-7">
@@ -137,18 +160,18 @@ const projects = [
     <Timeline
       items={[
         {
-          title: "Associate Professional Product Developer",
-          subtitle: "DXC Technology, Avilés, Spain",
+          title: "Full-Stack & Automation Lead",
+          subtitle: "DXC Technology | Remote (Spain)",
           date: "March 2020 - Present",
           description:
-            "Creating user-friendly interfaces (Adobe XD, Figma) and building web applications (React, TypeScript). Development and maintenance of Node.js APIs. Testing strategy leveraging Jest for unit testing, React Testing Library for component testing, and Cypress for end-to-end testing. Streamlining AWS deployments with Terraform and automating CI/CD processes with Jenkins.",
+            "Developed and maintained the accessible, high-performance open-source Halstack Design System comprising 20+ reusable UI components using React and Angular, featuring hypermedia API (HAL) integration, interactive documentation in Storybook, and automated unit and E2E testing with Jest, React Testing Library, and Cypress; adopted across 20+ internal teams and multiple international projects for insurance SaaS. Built 5+ full-stack microservices (such as API Explorer and UX Config) combining React frontends with Node.js/Express REST APIs, provisioning AWS Lambda functions, DynamoDB tables, Secrets Manager, and S3 buckets via Terraform to serve over 500+ platform users. Led a 3-person Automation team using Scrum and Kanban, enforcing code review standards, coordinating task prioritization, planning, and the end-to-end redesign of the team's tech stack, including NoSQL modeling optimization in DynamoDB and automated CI/CD pipelines with Jenkins and GitHub Actions. Spearheaded the integration of Multi-Factor Authentication (MFA) and mass user migration in AWS Cognito Pools, managing communications and critical support for over 800 users during a maintenance window.",
         },
         {
-          title: "Software engineer",
-          subtitle: "Capgemini, Langreo, Spain",
-          date: "February 2019 - April 2019 and September 2019 - March 2020",
+          title: "Software Engineer",
+          subtitle: "Capgemini | Asturias (Spain)",
+          date: "September 2019 - March 2020",
           description:
-            "Build and maintain software solutions using Java and perform efficient database maintenance with PL/SQL. Adept at troubleshooting, debugging, and optimizing code for performance and functionality.",
+            "Developed and maintained backend services for a major Spanish banking client and a national logistics enterprise using Java and Spring Boot. Optimized 15+ critical overnight PL/SQL queries, reducing batch execution times by 40% and resolving production issues to ensure high availability and system performance. Designed and implemented a multithreaded Java solution for parallel processing of 5.000+ daily packages assigned to smart lockers, reducing execution times by 65% prior to production launch.",
         },
       ]}
     />
@@ -160,22 +183,27 @@ const projects = [
     <Timeline
       items={[
         {
+          title: "AWS Certified AI Practitioner",
+          subtitle: "Amazon Web Services",
+          date: "2026",
+        },
+        {
+          title: "AWS Certified Solutions Architect – Associate",
+          subtitle: "Amazon Web Services",
+          date: "2023",
+        },
+        {
           title: "Oxford Test of English",
-          subtitle: "B2 CEFR level",
+          subtitle: "B2 CEFR level (Full Professional)",
           date: "May 2023",
         },
         {
-          title: "AWS Solutions Architect",
-          subtitle: "Associate",
-          date: "February 2023 - February 2026",
-        },
-        {
-          title: "Master in Web Engineering",
+          title: "M.Sc. in Web Engineering",
           subtitle: "University of Oviedo, Spain",
-          date: "September 2019 - June 2021",
+          date: "September 2019 - July 2021",
         },
         {
-          title: "Grade in Software Engineering",
+          title: "B.Sc. in Software Engineering",
           subtitle: "University of Oviedo, Spain",
           date: "September 2015 - July 2019",
         },
