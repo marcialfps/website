@@ -1,0 +1,102 @@
+---
+import BentoCard from "./BentoCard.astro";
+import type { AvailabilityInfo } from "../../data/portfolio";
+
+export interface Props {
+  availability: AvailabilityInfo;
+}
+
+const { availability } = Astro.props;
+---
+
+<BentoCard
+  as="aside"
+  class="lg:col-span-4 !p-0 min-h-[240px] flex flex-col justify-between"
+>
+  <!-- Background volcanic landscape -->
+  <img
+    src={availability.image}
+    alt={availability.imageAlt}
+    loading="lazy"
+    decoding="async"
+    class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105 motion-reduce:transition-none"
+  />
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 bg-gradient-to-t from-[#0f1115]/95 via-[#0f1115]/45 to-[#0f1115]/40"
+  >
+  </div>
+
+  <!-- Top status & timezone pills -->
+  <div class="relative z-10 flex items-center justify-between gap-2 p-5 sm:p-6">
+    <div
+      class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-basalt/80 px-2.5 py-1 backdrop-blur-md"
+    >
+      <span class="relative flex h-2 w-2" aria-hidden="true">
+        <span
+          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75 motion-reduce:animate-none"
+        ></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"
+        ></span>
+      </span>
+      <span class="font-mono text-[11px] font-medium text-emerald-300">
+        Available
+      </span>
+    </div>
+
+    <span
+      class="rounded-full border border-white/15 bg-basalt/80 px-2.5 py-1 font-mono text-[11px] text-zinc-200 backdrop-blur-md"
+    >
+      {availability.timezoneLabel}
+    </span>
+  </div>
+
+  <!-- Bottom location, coordinates & live clock -->
+  <div
+    class="relative z-10 mt-auto flex items-end justify-between gap-3 p-5 sm:p-6"
+  >
+    <div class="flex flex-col gap-0.5">
+      <p class="text-base font-semibold text-white leading-tight">
+        {availability.location}
+      </p>
+      <p class="font-mono text-[11px] text-zinc-300">
+        {availability.region}
+      </p>
+      <p class="mt-1 font-mono text-[10px] tracking-tight text-zinc-400">
+        {availability.coordinates}
+      </p>
+    </div>
+
+    <time
+      id="canary-local-time"
+      data-timezone={availability.timezone}
+      class="font-mono text-2xl sm:text-3xl font-semibold tracking-tight text-yellow tabular-nums drop-shadow-sm"
+    >
+      --:--
+    </time>
+  </div>
+</BentoCard>
+
+<script>
+  function updateCanaryClock() {
+    const el = document.getElementById("canary-local-time");
+    if (!el) return;
+    const tz = el.dataset.timezone || "Atlantic/Canary";
+    try {
+      const now = new Date();
+      const formatted = new Intl.DateTimeFormat("en-GB", {
+        timeZone: tz,
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }).format(now);
+      el.textContent = formatted;
+      el.setAttribute("datetime", now.toISOString());
+    } catch {
+      el.textContent = "UTC+0";
+    }
+  }
+
+  updateCanaryClock();
+  setInterval(updateCanaryClock, 30000);
+</script>

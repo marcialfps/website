@@ -1,226 +1,30 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Heading from "../components/Heading.astro";
-import Card from "../components/Card.astro";
-import Timeline from "../components/Timeline.astro";
-import Tag from "../components/Tag.astro";
+import HeroBento from "../components/bento/HeroBento.astro";
+import AvailabilityWidget from "../components/bento/AvailabilityWidget.astro";
+import ProjectsBento from "../components/bento/ProjectsBento.astro";
+import ExperienceBento from "../components/bento/ExperienceBento.astro";
+import StackBento from "../components/bento/StackBento.astro";
+import CommunityBento from "../components/bento/CommunityBento.astro";
+import { portfolioData } from "../data/portfolio";
 
-// Images
-import mainPhoto from "../assets/mainPhoto.png";
-import letthebadguysrollImage from "../assets/letthebadguys.png";
-import lanzarImage from "../assets/lanzar.png";
-import endOfDegreeImage from "../assets/endOfDegreeProject.png";
-import VoNG from "../assets/VoNG.png";
-
-// Icons
-import JobIcon from "../components/icons/Job.astro";
-import BookIcon from "../components/icons/Book.astro";
-import ToolsIcon from "../components/icons/Tools.astro";
-import CodeIcon from "../components/icons/Code.astro";
-
-import figma from "../assets/figma.svg";
-import javascript from "../assets/javascript.svg";
-import typescript from "../assets/typescript.svg";
-import react from "../assets/react.svg";
-import nodejs from "../assets/nodejs.svg";
-import astro from "../assets/astro.svg";
-import nextjs from "../assets/nextjs.svg";
-import testinglibrary from "../assets/testinglibrary.svg";
-import jest from "../assets/jest.svg";
-import express from "../assets/express.svg";
-import tailwind from "../assets/tailwind.svg";
-import aws from "../assets/aws.svg";
-import terraform from "../assets/terraform.svg";
-
-import Presentation from "../components/Presentation.astro";
-
-const socialMedia = [
-  { text: "Linkedin", href: "https://www.linkedin.com/in/marcialfps/" },
-  { text: "GitHub", href: "https://github.com/marcialfps" },
-  { text: "E-mail", href: "mailto:marcialfco@live.com" },
-];
-
-const skills = [
-  { icon: typescript, text: "TypeScript" },
-  { icon: javascript, text: "JavaScript" },
-  { text: "Java" },
-  { text: "Python" },
-  { text: "Oracle PL/SQL" },
-  { icon: react, text: "React" },
-  { text: "Angular" },
-  { icon: nodejs, text: "Node.js" },
-  { icon: express, text: "Express.js" },
-  { text: "Spring Boot" },
-  { text: "Webflow" },
-  { icon: aws, text: "AWS" },
-  { text: "DynamoDB" },
-  { icon: terraform, text: "Terraform" },
-  { text: "Claude Code" },
-  { text: "GitHub Copilot" },
-  { text: "Git" },
-  { text: "Jenkins" },
-  { text: "GitHub Actions" },
-  { icon: jest, text: "Jest" },
-  { icon: testinglibrary, text: "React Testing Library" },
-  { text: "Cypress" },
-  { text: "Storybook" },
-  { text: "Scrum" },
-  { text: "Kanban" },
-  { text: "CI/CD" },
-  { icon: astro, text: "AstroJS" },
-  { icon: nextjs, text: "NextJS" },
-  { icon: tailwind, text: "TailwindCSS" },
-  { icon: figma, text: "Figma" },
-];
-
-const projects = [
-  {
-    title: "Halstack Design System",
-    description:
-      "Accessible, high-performance open-source React and Angular component library featuring hypermedia API (HAL) integration, interactive documentation in Storybook, and automated unit and E2E testing with Jest, React Testing Library, and Cypress; adopted across 20+ internal teams and multiple international insurance SaaS projects.",
-    tags: ["React", "TypeScript", "Storybook", "Jest", "Cypress"],
-    link: "https://github.com/dxc-technology/halstack-react",
-    linkText: "See on GitHub",
-  },
-  {
-    title: "European Youth Press website",
-    description:
-      "Technical restructuring and comprehensive SEO optimization of the main institutional website using JavaScript, Webflow, and CSS, increasing organic web traffic by 45% (1,000+ monthly visits) and driving 10+ new European partnerships.",
-    tags: ["JavaScript", "Webflow", "CSS", "SEO"],
-    link: "https://www.youthpress.org/",
-    linkText: "Visit website",
-  },
-  {
-    image: VoNG,
-    imageAlt: "Voices of the Next Generation website",
-    title: "Voices of the Next Generation",
-    description:
-      '"Voices of the Next Generation: Future Decision-Makers on European Values and Citizenship" is a youth-led project which aims to reinforce cooperation between youth organisations to boost active citizenship and participation in democratic processes by supporting youth development and empowering them to become active members of the European Community. Responsible for the design and development of the website.',
-    tags: ["Web Design", "Webflow", "SEO"],
-    link: "https://www.voicesofthenextgeneration.eu/",
-    linkText: "Visit website",
-  },
-  {
-    image: letthebadguysrollImage,
-    imageAlt: "Let the bad guys roll icon",
-    title: "Let the Bad Guys Roll",
-    description:
-      "Demo game developed for the GMTK 2022 Game Jam. The planet is under the attack of the diciest army in town and it is up to you to protect it.",
-    tags: ["Game Jam", "Unity"],
-    link: "https://ulitol97.itch.io/let-the-bad-guys-roll",
-    linkText: "Play game",
-  },
-  {
-    image: endOfDegreeImage,
-    imageAlt: "Capture of the Augmented Reality app",
-    title:
-      "Assessment of preclinical learning using virtual reality based education for nursing students",
-    description:
-      "In this research, a case study is presented to analyze the use of VR technologies to learn healthcare techniques in the first year of nursing school.",
-    tags: ["Research paper", "Virtual Reality", "Unity"],
-    link: "https://www.tandfonline.com/doi/full/10.1080/09523987.2023.2324597",
-    linkText: "Read article",
-  },
-  {
-    image: lanzarImage,
-    imageAlt: "Preview of LanzAR project",
-    title: "LanzAR (Lanzarote in Augmented Reality)",
-    description:
-      "LanzAR provides a location-based experience where the user can see historical performances in augmented reality. Students participated in the recording of the historical representations.",
-    tags: ["End of degree project", "Augmented Reality", "Unity"],
-    link: "https://github.com/marcialfps/HistoricalRep_TFG",
-    linkText: "See code",
-  },
-];
+const {
+  profile,
+  experience,
+  education,
+  skillGroups,
+  projects,
+  volunteering,
+} = portfolioData;
 ---
 
-<BaseLayout>
-  <Presentation
-    image={mainPhoto}
-    title="Marcial F"
-    subtitle="Full-Stack & Cloud Engineer"
-    socialLinks={socialMedia}
-  >
-    <p class="text-center">
-      <span class="text-yellow font-serif"
-        >Full-Stack &amp; Cloud Engineer</span
-      > with over 6 years of experience at DXC Technology and Capgemini, specializing
-      in <span class="text-yellow font-serif"
-        >scalable cloud architectures and modern web development</span
-      > for the insurance and banking sectors. Proven track record of building serverless
-      microservices on AWS that power enterprise insurance SaaS products, alongside
-      accessible design systems using React and Terraform.
-    </p>
-    <p>📍Lanzarote, Canary Islands (Spain).</p>
-  </Presentation>
-
-  <section class="flex flex-col items-center gap-7">
-    <Heading level={2}><JobIcon />Professional experience</Heading>
-
-    <Timeline
-      items={[
-        {
-          title: "Full-Stack & Automation Lead",
-          subtitle: "DXC Technology | Remote (Spain)",
-          date: "March 2020 - Present",
-          description:
-            "Developed and maintained the accessible, high-performance open-source Halstack Design System comprising 20+ reusable UI components using React and Angular, featuring hypermedia API (HAL) integration, interactive documentation in Storybook, and automated unit and E2E testing with Jest, React Testing Library, and Cypress; adopted across 20+ internal teams and multiple international projects for insurance SaaS. Built 5+ full-stack microservices (such as API Explorer and UX Config) combining React frontends with Node.js/Express REST APIs, provisioning AWS Lambda functions, DynamoDB tables, Secrets Manager, and S3 buckets via Terraform to serve over 500+ platform users. Led a 3-person Automation team using Scrum and Kanban, enforcing code review standards, coordinating task prioritization, planning, and the end-to-end redesign of the team's tech stack, including NoSQL modeling optimization in DynamoDB and automated CI/CD pipelines with Jenkins and GitHub Actions. Spearheaded the integration of Multi-Factor Authentication (MFA) and mass user migration in AWS Cognito Pools, managing communications and critical support for over 800 users during a maintenance window.",
-        },
-        {
-          title: "Software Engineer",
-          subtitle: "Capgemini | Asturias (Spain)",
-          date: "September 2019 - March 2020",
-          description:
-            "Developed and maintained backend services for a major Spanish banking client and a national logistics enterprise using Java and Spring Boot. Optimized 15+ critical overnight PL/SQL queries, reducing batch execution times by 40% and resolving production issues to ensure high availability and system performance. Designed and implemented a multithreaded Java solution for parallel processing of 5.000+ daily packages assigned to smart lockers, reducing execution times by 65% prior to production launch.",
-        },
-      ]}
-    />
-  </section>
-
-  <section class="min-w-full flex flex-col items-center gap-5">
-    <Heading level={2}><BookIcon />Education and certifications</Heading>
-
-    <Timeline
-      items={[
-        {
-          title: "AWS Certified AI Practitioner",
-          subtitle: "Amazon Web Services",
-          date: "2026",
-        },
-        {
-          title: "AWS Certified Solutions Architect – Associate",
-          subtitle: "Amazon Web Services",
-          date: "2023",
-        },
-        {
-          title: "Oxford Test of English",
-          subtitle: "B2 CEFR level (Full Professional)",
-          date: "May 2023",
-        },
-        {
-          title: "M.Sc. in Web Engineering",
-          subtitle: "University of Oviedo, Spain",
-          date: "September 2019 - July 2021",
-        },
-        {
-          title: "B.Sc. in Software Engineering",
-          subtitle: "University of Oviedo, Spain",
-          date: "September 2015 - July 2019",
-        },
-      ]}
-    />
-  </section>
-
-  <section class="flex flex-col items-center gap-7">
-    <Heading level={2}><ToolsIcon />Technical skills</Heading>
-    <div class="flex justify-center gap-4 flex-wrap">
-      {skills.map((skill) => <Tag {...skill} />)}
-    </div>
-  </section>
-
-  <section class="flex flex-col items-center gap-7">
-    <Heading level={2}><CodeIcon />Projects</Heading>
-
-    {projects.map((project) => <Card {...project} />)}
-  </section>
+<BaseLayout wide>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 pt-2">
+    <HeroBento profile={profile} />
+    <AvailabilityWidget availability={profile.availability} />
+    <ProjectsBento projects={projects} />
+    <ExperienceBento experience={experience} education={education} />
+    <StackBento skillGroups={skillGroups} />
+    <CommunityBento volunteering={volunteering} />
+  </div>
 </BaseLayout>

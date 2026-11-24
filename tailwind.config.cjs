@@ -4,6 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        basalt: "#0f1115",
+        obsidian: "#151820",
         lightGrey: "#D9D9D9",
         black: "#0F0F0F",
         blue: "#1472FF",
@@ -15,8 +17,18 @@ module.exports = {
         darkGreyTransparent: "rgba(49, 49, 49, 0.7)",
       },
       fontFamily: {
-        sans: ["Roboto"],
-        serif: ["Roboto Slab Variable"],
+        sans: ["Roboto", "system-ui", "sans-serif"],
+        serif: ["Roboto Slab Variable", "serif"],
+        mono: [
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Monaco",
+          "Consolas",
+          "Liberation Mono",
+          "Courier New",
+          "monospace",
+        ],
       },
     },
   },

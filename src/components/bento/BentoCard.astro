@@ -1,0 +1,21 @@
+---
+export interface Props {
+  id?: string;
+  class?: string;
+  as?: "div" | "section" | "article" | "aside";
+  glow?: boolean;
+}
+
+const { id, class: className = "", as: Tag = "div", glow = true } = Astro.props;
+---
+
+<Tag
+  id={id}
+  class={`group relative overflow-hidden rounded-2xl border border-white/10 bg-[#14171d]/85 p-5 sm:p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] backdrop-blur-sm transition-all duration-300 motion-reduce:transition-none ${
+    glow
+      ? "hover:border-white/20 hover:bg-[#171b23]/95 hover:shadow-[0_12px_36px_-18px_rgba(198,174,89,0.22),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+      : ""
+  } ${className}`}
+>
+  <slot />
+</Tag>
